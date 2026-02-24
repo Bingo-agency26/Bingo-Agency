@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           {/* Brand */}
           <div className="max-w-sm">
             <img 
-              src={IMAGES.logo} 
+              src={IMAGES.logoFooter} 
               alt="Bingo Agency" 
               className="h-10 mb-4 object-contain"
             />

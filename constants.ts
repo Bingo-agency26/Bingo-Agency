@@ -10,6 +10,7 @@ export const LINKS = {
 
 export const IMAGES = {
   logo: "https://img.mailinblue.com/10048989/images/content_library/original/698decc3f03c89654a2a2d01.png",
+  logoFooter: "/logo-footer.png", // White logo for dark background
   heroBg: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=1920", // Professional agency meeting, warm tones
   adsDashboard: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", // Analytics/SEO
   socialMedia: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80&w=800", // Social Media abstract
