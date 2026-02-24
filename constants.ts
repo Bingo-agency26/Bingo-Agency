@@ -115,7 +115,7 @@ export const BLOG_POSTS = [
       <p class="mb-6">Le design durable n'est plus une option. En 2026, les chartes graphiques intègrent l'économie d'énergie : mode sombre par défaut, images compressées, vecteurs légers. Un beau design est désormais un design qui charge vite et consomme peu.</p>
 
       <div class="bg-orange-50 p-6 rounded-xl border border-orange-100 my-8">
-        <h4 class="font-bold text-brand-blue mb-2">Le conseil de Bingo Agency</h4>
+        <h4 class="font-bold text-brand-orange mb-2">Le conseil de Bingo Agency</h4>
         <p>Ne suivez pas toutes les tendances. Choisissez celles qui servent votre histoire. Une identité forte est avant tout une identité cohérente.</p>
       </div>
     `
@@ -179,7 +179,7 @@ export const BLOG_POSTS = [
       <p class="mb-6">Google aime quand d'autres sites locaux parlent de vous. Partenariats avec des associations, articles dans la presse régionale (La Dépêche, Actu Toulouse), annuaires locaux de qualité... Ces liens renforcent votre ancrage territorial aux yeux de l'algorithme.</p>
 
       <div class="bg-orange-50 p-6 rounded-xl border border-orange-100 my-8">
-        <h4 class="font-bold text-brand-blue mb-2">L'astuce Bingo</h4>
+        <h4 class="font-bold text-brand-orange mb-2">L'astuce Bingo</h4>
         <p>Intégrez une carte Google Maps sur votre page contact et mentionnez des points de repère locaux ("à côté du Capitole", "proche de la Cité de l'Espace") pour aider Google à vous situer.</p>
       </div>
     `

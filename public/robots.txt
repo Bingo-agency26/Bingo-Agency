@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bingo-agency.fr/sitemap.xml

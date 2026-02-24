@@ -16,37 +16,37 @@ const services = [
     title: "Réseaux Sociaux",
     description: "Engagez votre communauté là où elle se trouve.",
     features: ["Stratégie Social Media", "Création de Contenu (Reels/Stories)", "Community Management", "Facebook, Insta, TikTok, LinkedIn"],
-    color: "bg-pink-100 text-pink-600"
+    color: "bg-orange-100 text-orange-700"
   },
   {
     icon: Printer,
     title: "Print & Supports",
     description: "Matérialisez votre image de marque.",
     features: ["Flyers & Brochures", "Cartes de Visite", "PLV & Signalétique", "Distribution & Logistique"],
-    color: "bg-amber-100 text-amber-600"
+    color: "bg-amber-50 text-amber-600"
   },
   {
     icon: PenTool,
     title: "Identité Visuelle",
     description: "Une image forte pour une marque mémorable.",
     features: ["Création de Logo", "Charte Graphique", "Naming & Branding", "Guidelines"],
-    color: "bg-purple-100 text-purple-600"
+    color: "bg-amber-100 text-amber-700"
   },
   {
     icon: Layout,
     title: "Web & SEO",
     description: "Votre vitrine digitale, performante et visible.",
     features: ["Sites Vitrines & E-commerce", "Référencement Naturel (SEO)", "Maintenance & Sécurité", "UX/UI Design"],
-    color: "bg-green-100 text-green-600"
+    color: "bg-yellow-50 text-yellow-600"
   }
 ];
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-32 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Nos Expertises</h2>
+          <h2 className="text-sm font-bold text-brand-orange uppercase tracking-wider mb-2">Nos Expertises</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Une approche 360° pour votre croissance</h3>
           <p className="text-gray-600">
             Nous combinons créativité et data pour déployer des stratégies omnicanales qui convertissent.
@@ -69,7 +69,7 @@ export const Services: React.FC = () => {
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-sm text-gray-500">
-                    <CheckCircle2 size={16} className="text-brand-blue shrink-0" />
+                    <CheckCircle2 size={16} className="text-brand-orange shrink-0" />
                     {feature}
                   </li>
                 ))}
@@ -79,7 +79,7 @@ export const Services: React.FC = () => {
           
           {/* Call to Action Card */}
           <div className="p-8 rounded-2xl bg-brand-dark text-white flex flex-col justify-center items-center text-center">
-            <BarChart size={48} className="text-brand-blue mb-6" />
+            <BarChart size={48} className="text-brand-orange mb-6" />
             <h4 className="text-xl font-bold mb-3">Besoin d'une stratégie sur-mesure ?</h4>
             <p className="text-gray-400 mb-8 text-sm">
               Discutons de vos objectifs et construisons ensemble votre plan d'action.

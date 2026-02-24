@@ -15,7 +15,7 @@ function App() {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-brand-dark selection:bg-brand-blue selection:text-white">
+    <div className="min-h-screen bg-white text-brand-dark selection:bg-brand-orange selection:text-white">
       <Header />
       <main>
         <Hero />

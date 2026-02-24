@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="font-medium text-sm uppercase tracking-wide text-brand-dark hover:text-brand-blue transition-colors"
+              className="font-medium text-sm uppercase tracking-wide text-brand-dark hover:text-brand-orange transition-colors"
             >
               {link.name}
             </a>
@@ -82,7 +82,7 @@ export const Header: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold text-brand-dark hover:text-brand-blue"
+              className="text-2xl font-bold text-brand-dark hover:text-brand-orange"
             >
               {link.name}
             </a>
