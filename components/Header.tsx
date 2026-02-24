@@ -30,7 +30,8 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <a href="#" className="relative z-50">
+        {/* Logo */}
+        <a href="#" className="relative z-50 flex-shrink-0">
           <img 
             src={IMAGES.logo} 
             alt="Bingo Agency" 
@@ -38,7 +39,7 @@ export const Header: React.FC = () => {
           />
         </a>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav - Centered */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a 
@@ -49,22 +50,28 @@ export const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <Button 
-            href={LINKS.booking} 
-            variant="primary" 
-            className="!py-2 !px-5 !text-sm"
-          >
-            Audit Gratuit
-          </Button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden relative z-50 text-brand-dark"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-4">
+          <div className="hidden md:block">
+            <Button 
+              href={LINKS.booking} 
+              variant="primary" 
+              className="!py-2 !px-5 !text-sm"
+            >
+              Audit Gratuit
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden relative z-50 text-brand-dark"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
 
         {/* Mobile Nav Overlay */}
         <div className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden ${
