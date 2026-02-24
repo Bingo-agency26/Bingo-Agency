@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
             <img 
               src={IMAGES.logoFooter} 
               alt="Bingo Agency" 
-              className="h-10 mb-4 object-contain"
+              className="w-40 mb-4 object-contain"
             />
             <p className="text-gray-400 text-sm leading-relaxed">
               Agence de communication 360° à Toulouse.

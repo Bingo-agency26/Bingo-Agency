@@ -57,19 +57,19 @@ export const Services: React.FC = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="group p-8 rounded-2xl border border-gray-100 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group p-10 rounded-3xl border border-gray-100 bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${service.color}`}>
-                <service.icon size={28} />
+              <div className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-8 ${service.color}`}>
+                <service.icon size={40} />
               </div>
-              <h4 className="text-xl font-bold text-brand-dark mb-3">{service.title}</h4>
-              <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+              <h4 className="text-2xl font-bold text-brand-dark mb-4">{service.title}</h4>
+              <p className="text-gray-600 mb-8 text-base leading-relaxed">
                 {service.description}
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-sm text-gray-500">
-                    <CheckCircle2 size={16} className="text-brand-orange shrink-0" />
+                  <li key={idx} className="flex items-center gap-3 text-base text-gray-500">
+                    <CheckCircle2 size={20} className="text-brand-orange shrink-0" />
                     {feature}
                   </li>
                 ))}

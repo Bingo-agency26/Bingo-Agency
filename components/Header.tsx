@@ -33,7 +33,7 @@ export const Header: React.FC = () => {
         {/* Logo */}
         <a href="#" className="relative z-50 flex-shrink-0">
           <img 
-            src={IMAGES.logo} 
+            src={IMAGES.logoHeader} 
             alt="Bingo Agency" 
             className="h-10 md:h-12 object-contain" 
           />
