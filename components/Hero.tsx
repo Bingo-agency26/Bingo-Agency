@@ -17,40 +17,40 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-sm mb-6">
-            <span className="relative flex h-3 w-3">
+        <div className="max-w-4xl animate-fade-in">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-base md:text-lg mb-8">
+            <span className="relative flex h-4 w-4">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-brand-orange"></span>
             </span>
             Agence de Communication 360° à Toulouse
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-dark leading-tight mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-brand-dark leading-tight mb-8">
             Propulsez votre <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">
               Business
             </span> vers de nouveaux sommets.
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+          <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-2xl">
             De la stratégie digitale à l'identité visuelle, nous transformons votre communication en levier de croissance. Publicité, Social Media, Print & Branding.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button href={LINKS.booking} variant="primary" icon={ArrowRight}>
+          <div className="flex flex-col sm:flex-row gap-5">
+            <Button href={LINKS.booking} variant="primary" icon={ArrowRight} className="!px-8 !py-4 !text-xl">
               Audit Gratuit de votre Com'
             </Button>
-            <Button href="#portfolio" variant="outline">
+            <Button href="#portfolio" variant="outline" className="!px-8 !py-4 !text-xl">
               Voir nos réalisations
             </Button>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             {STATS.map((stat, index) => (
-              <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                <p className="text-3xl font-bold text-brand-orange">{stat.value}</p>
-                <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">{stat.label} <span className="text-gray-400 normal-case">{stat.suffix}</span></p>
+              <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <p className="text-4xl md:text-5xl font-bold text-brand-orange">{stat.value}</p>
+                <p className="text-sm md:text-base text-gray-500 font-medium uppercase tracking-wide mt-2">{stat.label} <span className="text-gray-400 normal-case">{stat.suffix}</span></p>
               </div>
             ))}
           </div>
