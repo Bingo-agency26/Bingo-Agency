@@ -10,7 +10,7 @@ export const LINKS = {
 
 export const IMAGES = {
   heroBg: "/assets/images/hero-bg.jpg",
-  logoHeader: "/assets/images/logo.png",
+  logoHeader: "https://img.mailinblue.com/10048989/images/content_library/original/698decc3f03c89654a2a2d01.png",
   logoAlt: "/assets/images/logo-black.png",
   logoFooter: "/assets/images/logo-footer.png",
 };
