@@ -5,8 +5,11 @@ import { PRICING, LINKS } from '../constants';
 
 export const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="pricing" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute -left-20 top-40 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -right-20 bottom-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Tarifs</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Des offres adaptées à votre ambition</h3>

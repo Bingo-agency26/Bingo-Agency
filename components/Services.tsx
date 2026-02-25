@@ -43,8 +43,9 @@ const services = [
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-32 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-bold text-brand-orange uppercase tracking-wider mb-2">Nos Expertises</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Une approche 360° pour votre croissance</h3>

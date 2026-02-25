@@ -50,3 +50,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #EA580C; /* Darker Orange */
 }
+
+/* Background Patterns */
+.bg-grid-pattern {
+  background-image: radial-gradient(#F97316 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.05;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(#0F172A 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.03;
+}

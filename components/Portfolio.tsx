@@ -30,8 +30,9 @@ const projects = [
 
 export const Portfolio: React.FC = () => {
   return (
-    <section id="portfolio" className="py-20 bg-brand-gray">
-      <div className="container mx-auto px-4">
+    <section id="portfolio" className="py-20 bg-brand-gray relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <div className="max-w-2xl">
             <h2 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Portfolio</h2>

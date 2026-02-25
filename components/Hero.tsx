@@ -13,7 +13,8 @@ export const Hero: React.FC = () => {
           alt="Office Background" 
           className="w-full h-full object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -41,7 +42,7 @@ export const Hero: React.FC = () => {
             <Button href={LINKS.booking} variant="primary" icon={ArrowRight}>
               Audit Gratuit de votre Com'
             </Button>
-            <Button href="#portfolio" variant="outline">
+            <Button href={LINKS.booking} variant="outline">
               Voir nos réalisations
             </Button>
           </div>
@@ -61,17 +62,24 @@ export const Hero: React.FC = () => {
             <img 
               src={IMAGES.adsDashboard} 
               alt="Dashboard Ads" 
-              className="rounded-2xl shadow-2xl translate-y-8 hover:-translate-y-2 transition-transform duration-500"
+              className="rounded-2xl shadow-2xl translate-y-8 hover:-translate-y-2 transition-transform duration-500 border-4 border-white"
             />
             <img 
               src={IMAGES.branding} 
               alt="Branding" 
-              className="rounded-2xl shadow-2xl translate-y-12 hover:-translate-y-2 transition-transform duration-500 delay-100"
+              className="rounded-2xl shadow-2xl translate-y-12 hover:-translate-y-2 transition-transform duration-500 delay-100 border-4 border-white"
             />
           </div>
           {/* Decorative Elements */}
           <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
+        <div className="w-6 h-10 border-2 border-brand-orange/30 rounded-full flex justify-center p-1">
+          <div className="w-1 h-2 bg-brand-orange rounded-full animate-scroll"></div>
         </div>
       </div>
     </section>

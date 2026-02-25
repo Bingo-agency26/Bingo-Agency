@@ -4,8 +4,11 @@ import { TESTIMONIALS } from '../constants';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section id="testimonials" className="py-20 bg-brand-dark text-white overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" className="py-24 bg-brand-dark text-white overflow-hidden relative">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-brand-orange/10 via-transparent to-transparent pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Témoignages</h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-4">Ils nous font confiance</h3>
