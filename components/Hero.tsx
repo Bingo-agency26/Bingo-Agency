@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
             </span>
-            Agence de Communication 360° à Toulouse
+            Social Media Marketing Agency à Toulouse
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-dark leading-tight mb-6">

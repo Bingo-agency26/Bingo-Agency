@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               className="w-40 mb-4 object-contain"
             />
             <p className="text-gray-400 text-sm leading-relaxed">
-              Agence de communication 360° à Toulouse.
+              Social Media Marketing Agency à Toulouse.
               <br/>
               Nous propulsons votre marque vers de nouveaux sommets.
             </p>
