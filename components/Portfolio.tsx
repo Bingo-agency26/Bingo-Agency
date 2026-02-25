@@ -5,25 +5,25 @@ const projects = [
   {
     title: "Campagne E-commerce Mode",
     category: "Google Ads & Social",
-    image: IMAGES.heroBg,
+    image: IMAGES.ecommerce,
     stats: "ROAS x5"
   },
   {
     title: "Refonte Identité Visuelle",
     category: "Branding",
-    image: IMAGES.heroBg,
+    image: IMAGES.branding,
     stats: "Nouveau Logo"
   },
   {
     title: "Stratégie Immobilière",
     category: "Lead Gen",
-    image: IMAGES.heroBg,
+    image: IMAGES.adsDashboard,
     stats: "+45 Leads/mois"
   },
   {
     title: "Brochures & PLV Luxe",
     category: "Print",
-    image: IMAGES.heroBg,
+    image: IMAGES.print,
     stats: "Impression Offset"
   }
 ];

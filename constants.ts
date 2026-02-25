@@ -13,6 +13,12 @@ export const IMAGES = {
   logoHeader: "https://img.mailinblue.com/10048989/images/content_library/original/698decc3f03c89654a2a2d01.png",
   logoAlt: "/assets/images/logo-black.png",
   logoFooter: "/assets/images/logo-footer.png",
+  adsDashboard: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", // Analytics/SEO
+  socialMedia: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80&w=800", // Social Media abstract
+  print: "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=800", // Print materials
+  branding: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800", // Branding/Creative
+  team: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800", // Dynamic team
+  ecommerce: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800" // E-commerce/Digital
 };
 
 export const STATS = [
@@ -97,7 +103,7 @@ export const BLOG_POSTS = [
     id: 1,
     title: "Charte graphique 2026 : Les tendances à ne pas manquer",
     category: "Design",
-    image: IMAGES.heroBg,
+    image: IMAGES.branding,
     excerpt: "Minimalisme, 3D, typographies audacieuses... Découvrez ce qui fera vibrer les marques l'année prochaine.",
     content: `
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">1. Le retour du maximalisme maîtrisé</h3>
@@ -119,7 +125,7 @@ export const BLOG_POSTS = [
     id: 2,
     title: "Google Ads vs Réseaux Sociaux : Le match du ROI",
     category: "Stratégie",
-    image: IMAGES.heroBg,
+    image: IMAGES.adsDashboard,
     excerpt: "Où investir votre budget publicitaire ? Comparatif détaillé pour maximiser vos conversions.",
     content: `
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">Google Ads : La réponse au besoin</h3>
@@ -144,7 +150,7 @@ export const BLOG_POSTS = [
     id: 3,
     title: "Le Print à l'ère du digital : Pourquoi le papier résiste",
     category: "Print",
-    image: IMAGES.heroBg,
+    image: IMAGES.print,
     excerpt: "Dans un monde tout écran, le support physique devient un objet de luxe et de différenciation.",
     content: `
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">La saturation numérique</h3>
@@ -161,7 +167,7 @@ export const BLOG_POSTS = [
     id: 4,
     title: "Optimiser son SEO local en Occitanie",
     category: "SEO",
-    image: IMAGES.heroBg,
+    image: IMAGES.socialMedia,
     excerpt: "Comment apparaître en premier sur Google Maps et dans les recherches locales à Toulouse et environs.",
     content: `
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">1. La fiche Google Business Profile (ex-GMB)</h3>

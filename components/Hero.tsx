@@ -60,12 +60,12 @@ export const Hero: React.FC = () => {
         <div className="relative hidden lg:block animate-slide-up">
           <div className="relative z-10 grid grid-cols-2 gap-4">
             <img 
-              src={IMAGES.heroBg} 
+              src={IMAGES.adsDashboard} 
               alt="Dashboard Ads" 
               className="rounded-2xl shadow-2xl translate-y-8 hover:-translate-y-2 transition-transform duration-500 border-4 border-white"
             />
             <img 
-              src={IMAGES.heroBg} 
+              src={IMAGES.branding} 
               alt="Branding" 
               className="rounded-2xl shadow-2xl translate-y-12 hover:-translate-y-2 transition-transform duration-500 delay-100 border-4 border-white"
             />
