@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BLOG_POSTS } from '../constants';
-import { Button } from './Button';
 
 interface BlogProps {
   onOpenArticle: (articleId: number) => void;
@@ -119,13 +118,6 @@ export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
               />
             ))}
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6 text-sm md:text-base">
-            {BLOG_POSTS.length} articles pour booster votre stratégie marketing
-          </p>
         </div>
       </div>
     </section>
