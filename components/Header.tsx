@@ -26,7 +26,7 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm ${
-        isScrolled ? 'py-3' : 'py-5'
+        isScrolled ? 'py-4' : 'py-6'
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
@@ -58,7 +58,7 @@ export const Header: React.FC = () => {
             <Button 
               href={LINKS.booking} 
               variant="primary" 
-              className="!py-2 !px-5 !text-sm"
+              className="!py-3 !px-6 !text-base"
             >
               Audit Gratuit
             </Button>
