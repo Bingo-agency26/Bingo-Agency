@@ -17,9 +17,9 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-sm mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-xs md:text-sm mb-10">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
@@ -27,18 +27,18 @@ export const Hero: React.FC = () => {
             Social Media Marketing Agency à Toulouse
           </div>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-dark leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-brand-dark leading-tight mb-6">
             Propulsez votre <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">
               Business
             </span> vers de nouveaux sommets.
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
             De la stratégie digitale à l'identité visuelle, nous transformons votre communication en levier de croissance. Publicité, Social Media, Print & Branding.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-5">
             <Button href={LINKS.booking} variant="primary" icon={ArrowRight}>
               Audit Gratuit de votre Com'
             </Button>
@@ -47,11 +47,12 @@ export const Hero: React.FC = () => {
             </Button>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Stats - Responsive Grid */}
+          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {STATS.map((stat, index) => (
-              <div key={index} className="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                <p className="text-3xl font-bold text-brand-orange">{stat.value}</p>
-                <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mt-1">{stat.label} <span className="text-gray-400 normal-case">{stat.suffix}</span></p>
+              <div key={index} className="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100">
+                <p className="text-2xl md:text-3xl font-bold text-brand-orange">{stat.value}</p>
+                <p className="text-[10px] md:text-xs text-gray-500 font-medium uppercase tracking-wide mt-1 leading-tight">{stat.label} <span className="text-gray-400 normal-case">{stat.suffix}</span></p>
               </div>
             ))}
           </div>
