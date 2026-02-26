@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { IMAGES } from '../constants';
 
 const projects = [
@@ -33,6 +33,16 @@ interface PortfolioProps {
 }
 
 export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-rotate slideshow every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % projects.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="portfolio" className="py-16 md:py-20 lg:py-24 bg-brand-gray relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
@@ -50,23 +60,51 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
           </button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <span className="text-brand-blue text-xs font-bold uppercase tracking-wider mb-1">{project.category}</span>
-                <h4 className="text-white text-xl font-bold mb-2">{project.title}</h4>
-                <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium">
-                  {project.stats}
+        {/* Slideshow */}
+        <div className="relative">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`group relative overflow-hidden rounded-2xl aspect-[4/5] transition-all duration-700 ${
+                  index === currentSlide
+                    ? 'ring-4 ring-brand-orange scale-105 z-10'
+                    : 'opacity-70 hover:opacity-100'
+                }`}
+              >
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-6 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                }`}>
+                  <span className="text-brand-blue text-xs font-bold uppercase tracking-wider mb-1">{project.category}</span>
+                  <h4 className="text-white text-xl font-bold mb-2">{project.title}</h4>
+                  <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium">
+                    {project.stats}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Slideshow Indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {projects.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentSlide
+                    ? 'w-8 bg-brand-orange'
+                    : 'w-2 bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Voir projet ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
         
         <div className="mt-8 text-center md:hidden">
