@@ -21,9 +21,9 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-3 font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg rounded-lg";
   
   const variants = {
-    primary: "bg-brand-orange text-white hover:bg-orange-600 shadow-orange-500/30",
-    outline: "border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white",
-    white: "bg-white text-brand-orange hover:bg-gray-100"
+    primary: "bg-[#FF4500] text-white hover:bg-[#E63E00] shadow-[#FF4500]/30",
+    outline: "border-2 border-[#FF4500] text-[#FF4500] hover:bg-[#FF4500] hover:text-white",
+    white: "bg-white text-[#FF4500] hover:bg-[#EFEEEE]"
   };
 
   const widthClass = fullWidth ? "w-full" : "";
