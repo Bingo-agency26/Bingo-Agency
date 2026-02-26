@@ -12,7 +12,7 @@ export const IMAGES = {
   heroBg: "./assets/images/hero-bg.jpg",
   logoHeader: "https://img.mailinblue.com/10048989/images/content_library/original/698decc3f03c89654a2a2d01.png",
   logoAlt: "./assets/images/logo-black.png",
-  logoFooter: "https://img.mailinblue.com/10048989/images/content_library/original/6987e9ea6c2bc49401ea96a5.jpg",
+  logoFooter: "./assets/images/logo-footer.png",
   adsDashboard: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", // Analytics/SEO
   socialMedia: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80&w=800", // Social Media abstract
   print: "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=800", // Print materials
