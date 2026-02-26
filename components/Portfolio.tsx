@@ -28,19 +28,26 @@ const projects = [
   }
 ];
 
-export const Portfolio: React.FC = () => {
+interface PortfolioProps {
+  onViewAll: () => void;
+}
+
+export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
   return (
-    <section id="portfolio" className="py-20 bg-brand-gray relative overflow-hidden">
+    <section id="portfolio" className="py-16 md:py-20 lg:py-24 bg-brand-gray relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16">
           <div className="max-w-2xl">
-            <h2 className="text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Portfolio</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-brand-dark">Nos dernières réalisations</h3>
+            <h2 className="text-xs md:text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Portfolio</h2>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">Nos dernières réalisations</h3>
           </div>
-          <a href="#" className="hidden md:block text-brand-blue font-semibold hover:underline mt-4 md:mt-0">
+          <button
+            onClick={onViewAll}
+            className="hidden md:block text-brand-blue font-semibold hover:underline mt-4 md:mt-0 transition-colors"
+          >
             Voir tous les projets →
-          </a>
+          </button>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -63,9 +70,12 @@ export const Portfolio: React.FC = () => {
         </div>
         
         <div className="mt-8 text-center md:hidden">
-          <a href="#" className="text-brand-blue font-semibold hover:underline">
+          <button
+            onClick={onViewAll}
+            className="text-brand-blue font-semibold hover:underline transition-colors"
+          >
             Voir tous les projets →
-          </a>
+          </button>
         </div>
       </div>
     </section>
