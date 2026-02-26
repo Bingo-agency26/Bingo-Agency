@@ -21,7 +21,8 @@ export const IMAGES = {
   ecommerce: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800",
   blogSEO: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?auto=format&fit=crop&q=80&w=800",
   blogMarketing: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-  blogDesign: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800"
+  blogDesign: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
+  blogAI: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/9286a175-58e3-49b0-b2b7-14f48f6fd7fc.png"
 };
 
 export const STATS = [
@@ -161,7 +162,7 @@ export const BLOG_POSTS = [
       <p class="mb-6">Article "Meilleur [service] à Toulouse", "Top 10 [secteur] Haute-Garonne", "Événements [industrie] Occitanie 2026". Intégrez les quartiers : Capitole, Saint-Cyprien, Purpan, Ramonville...</p>
 
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">4. Backlinks Locaux de Qualité</h3>
-      <p class="mb-6">Partenariats avec : CCI Toulouse, La Dépêche, Actu Toulouse, blogs locaux, associations de commerçants. 10 backlinks .fr locaux > 100 backlinks génériques.</p>
+      <p class="mb-6">Partenariats avec : CCI Toulouse, La Dêpêche, Actu Toulouse, blogs locaux, associations de commerçants. 10 backlinks .fr locaux > 100 backlinks génériques.</p>
 
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">5. NAP Consistency (Name, Address, Phone)</h3>
       <p class="mb-6">Votre adresse doit être IDENTIQUE partout : site, Google, Facebook, Pages Jaunes, annuaires. Une variation = confusion pour Google = perte de ranking.</p>
@@ -272,7 +273,7 @@ export const BLOG_POSTS = [
     title: "IA & Marketing 2026 : ChatGPT, Midjourney, Outils Indispensables",
     slug: "ia-marketing-outils-2026",
     category: "Marketing Digital",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    image: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/9286a175-58e3-49b0-b2b7-14f48f6fd7fc.png",
     excerpt: "Comment intégrer l'IA dans votre stratégie marketing sans perdre l'humain. Guide pratique TPE/PME.",
     date: "2026-02-17",
     readTime: "10 min",
