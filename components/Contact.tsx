@@ -1,9 +1,46 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { LINKS } from '../constants';
-import { MapPin, Mail, Phone, Check } from 'lucide-react';
+import { MapPin, Mail, Check, Loader } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export const Contact: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const form = e.currentTarget;
+    const formData = {
+      name: (form.elements.namedItem('name') as HTMLInputElement).value,
+      company: (form.elements.namedItem('company') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    };
+
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID',        // À remplacer
+        'YOUR_TEMPLATE_ID',       // À remplacer
+        formData,
+        'YOUR_PUBLIC_KEY'         // À remplacer
+      );
+      setSubmitStatus('success');
+      form.reset();
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Erreur envoi email:', error);
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-16 md:py-20 bg-brand-gray">
       <div className="container mx-auto px-4 md:px-6">
@@ -62,15 +99,7 @@ export const Contact: React.FC = () => {
 
           {/* Form */}
           <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
-            <form 
-              name="contact" 
-              method="POST" 
-              data-netlify="true" 
-              action="/success.html"
-              className="space-y-5 md:space-y-6"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              
+            <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
               <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label htmlFor="name" className="block text-xs md:text-sm font-medium text-gray-700 mb-2">Nom complet</label>
@@ -79,7 +108,8 @@ export const Contact: React.FC = () => {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                     placeholder="Jean Dupont"
                   />
                 </div>
@@ -89,7 +119,8 @@ export const Contact: React.FC = () => {
                     type="text" 
                     id="company"
                     name="company"
-                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                     placeholder="Votre entreprise"
                   />
                 </div>
@@ -103,7 +134,8 @@ export const Contact: React.FC = () => {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                     placeholder="jean@entreprise.com"
                   />
                 </div>
@@ -113,7 +145,8 @@ export const Contact: React.FC = () => {
                     type="tel" 
                     id="phone"
                     name="phone"
-                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-sm md:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                     placeholder="06 12 34 56 78"
                   />
                 </div>
@@ -126,7 +159,8 @@ export const Contact: React.FC = () => {
                   name="message"
                   required
                   rows={4}
-                  className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all resize-none text-sm md:text-base"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3.5 rounded-lg border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all resize-none text-sm md:text-base disabled:bg-gray-50 disabled:cursor-not-allowed"
                   placeholder="Décrivez votre projet..."
                 ></textarea>
               </div>
@@ -137,7 +171,8 @@ export const Contact: React.FC = () => {
                   id="gdpr"
                   name="gdpr"
                   required
-                  className="mt-1 w-4 h-4 shrink-0"
+                  disabled={isSubmitting}
+                  className="mt-1 w-4 h-4 shrink-0 disabled:cursor-not-allowed"
                 />
                 <label htmlFor="gdpr" className="text-[11px] md:text-xs text-gray-500 leading-relaxed">
                   J'accepte que mes données soient traitées pour répondre à ma demande. 
@@ -145,8 +180,39 @@ export const Contact: React.FC = () => {
                 </label>
               </div>
 
-              <Button variant="primary" className="w-full justify-center py-4">
-                Envoyer le message
+              {/* Success Message */}
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 text-sm font-medium flex items-center gap-2">
+                    <Check size={18} />
+                    Message envoyé avec succès ! Nous vous répondons sous 24h.
+                  </p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 text-sm font-medium">
+                    Erreur lors de l'envoi. Contactez-nous directement à {LINKS.email}
+                  </p>
+                </div>
+              )}
+
+              <Button 
+                variant="primary" 
+                className="w-full justify-center py-4" 
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <Loader size={18} className="animate-spin" />
+                    Envoi en cours...
+                  </span>
+                ) : (
+                  'Envoyer le message'
+                )}
               </Button>
             </form>
           </div>
