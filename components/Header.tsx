@@ -15,6 +15,18 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },
@@ -32,7 +44,7 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="relative z-50 flex-shrink-0">
+        <a href="#" className="relative z-[60] flex-shrink-0">
           <img 
             src={IMAGES.logoHeader} 
             alt="Bingo Agency" 
@@ -70,25 +82,31 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden relative z-50"
+            className="md:hidden relative z-[60]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             style={{color: '#1A1A1A'}}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Nav Overlay */}
-        <div className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`} style={{backgroundColor: '#FFFFFF'}}>
+        {/* Mobile Nav Overlay - FIXED */}
+        <div 
+          className={`fixed inset-0 z-[55] flex flex-col items-center justify-center gap-8 transition-all duration-300 md:hidden ${
+            isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`} 
+          style={{backgroundColor: '#F9F7F2'}}
+        >
           {navLinks.map((link) => (
             <a 
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold"
+              className="text-2xl font-bold transition-colors"
               style={{color: '#1A1A1A'}}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#1A1A1A'}
             >
               {link.name}
             </a>
