@@ -5,7 +5,7 @@ import { LINKS, IMAGES, STATS } from '../constants';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-brand-gray">
+    <section className="relative min-h-screen flex items-center pt-48 md:pt-56 pb-20 overflow-hidden bg-brand-gray">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
 
       <div className="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-sm mb-8">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
