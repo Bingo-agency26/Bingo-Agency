@@ -5,7 +5,7 @@ import { LINKS, IMAGES, STATS } from '../constants';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-brand-gray">
+    <section className="relative min-h-screen flex items-center pt-40 pb-20 overflow-hidden bg-brand-gray">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
