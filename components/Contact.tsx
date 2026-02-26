@@ -1,38 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { Button } from './Button';
 import { LINKS } from '../constants';
-import { MapPin, Mail, Check, Loader } from 'lucide-react';
+import { MapPin, Mail, Check, Loader, X } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 export const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     const form = e.currentTarget;
-    
+
     try {
-      const response = await emailjs.sendForm(
+      await emailjs.sendForm(
         'service_6npek0d',
         'template_d3dbevc',
-        form
+        form,
+        'HrhrOWrVLj8Pk_4_X'
       );
       
-      console.log('✅ EmailJS Success:', response.status, response.text);
       setSubmitStatus('success');
       form.reset();
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    } catch (error: any) {
-      console.error('❌ EmailJS Error:', error);
-      console.error('Error details:', error.text || error.message);
+    } catch (error) {
+      console.error('EmailJS error:', error);
       setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     }
   };
 
@@ -41,13 +39,11 @@ export const Contact: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
           
-          {/* Contact Info */}
           <div>
             <h2 className="text-sm font-bold text-brand-orange uppercase tracking-wider mb-2">Contact</h2>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-4 md:mb-6">Parlons de votre projet</h3>
             <p className="text-gray-600 mb-6 md:mb-8 leading-relaxed">
-              Vous avez un projet en tête ? Une question sur nos services ? 
-              Remplissez le formulaire ou contactez-nous directement.
+              Vous avez un projet en tête ? Remplissez le formulaire ou contactez-nous directement.
             </p>
 
             <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
@@ -92,7 +88,6 @@ export const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Form */}
           <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
               <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
@@ -160,37 +155,27 @@ export const Contact: React.FC = () => {
                 ></textarea>
               </div>
 
-              <div className="flex items-start gap-3">
-                <input 
-                  type="checkbox" 
-                  id="gdpr"
-                  name="gdpr"
-                  required
-                  disabled={isSubmitting}
-                  className="mt-1 w-4 h-4 shrink-0 disabled:cursor-not-allowed"
-                />
-                <label htmlFor="gdpr" className="text-[11px] md:text-xs text-gray-500 leading-relaxed">
-                  J'accepte que mes données soient traitées pour répondre à ma demande. 
-                  Consultez notre <a href="#" className="underline hover:text-brand-orange">Politique de Confidentialité</a>.
-                </label>
-              </div>
-
-              {/* Success Message */}
               {submitStatus === 'success' && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg animate-in fade-in duration-300">
-                  <p className="text-green-800 text-sm font-medium flex items-center gap-2">
-                    <Check size={18} />
-                    Message envoyé avec succès ! Nous vous répondons sous 24h.
-                  </p>
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Check size={18} className="text-green-600" />
+                    <p className="text-green-800 text-sm font-medium">Message envoyé ! Nous vous répondons sous 24h.</p>
+                  </div>
+                  <button onClick={() => setSubmitStatus('idle')} className="text-green-600 hover:text-green-800">
+                    <X size={18} />
+                  </button>
                 </div>
               )}
 
-              {/* Error Message */}
               {submitStatus === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-in fade-in duration-300">
-                  <p className="text-red-800 text-sm font-medium">
-                    Erreur lors de l'envoi. Contactez-nous directement à {LINKS.email}
-                  </p>
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <X size={18} className="text-red-600" />
+                    <p className="text-red-800 text-sm font-medium">Échec envoi. Contactez {LINKS.email}</p>
+                  </div>
+                  <button onClick={() => setSubmitStatus('idle')} className="text-red-600 hover:text-red-800">
+                    <X size={18} />
+                  </button>
                 </div>
               )}
 
