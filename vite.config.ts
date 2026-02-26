@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: '/Bingo-Agency/',
+  base: '/',
   build: {
     outDir: 'dist',
     rollupOptions: {
