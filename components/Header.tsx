@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md shadow-sm ${
         isScrolled ? 'py-4' : 'py-6'
       }`}
-      style={{backgroundColor: 'rgba(249, 247, 242, 0.95)'}}
+      style={{backgroundColor: 'rgba(255, 255, 255, 0.95)'}}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
         {/* Mobile Nav Overlay */}
         <div className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`} style={{backgroundColor: '#F9F7F2'}}>
+        }`} style={{backgroundColor: '#FFFFFF'}}>
           {navLinks.map((link) => (
             <a 
               key={link.name}
