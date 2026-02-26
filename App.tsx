@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
@@ -12,11 +12,18 @@ import { CookieBanner } from './components/CookieBanner';
 import { Legal } from './components/Legal';
 import { PortfolioPage } from './components/PortfolioPage';
 import { BlogArticle } from './components/BlogArticle';
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
   const [selectedArticleId, setSelectedArticleId] = useState<number | null>(null);
+
+  // Initialize EmailJS on app load
+  useEffect(() => {
+    emailjs.init('HrhrOWrVLj8Pk_4_X');
+    console.log('EmailJS initialized');
+  }, []);
 
   const handleOpenArticle = (articleId: number) => {
     setSelectedArticleId(articleId);
