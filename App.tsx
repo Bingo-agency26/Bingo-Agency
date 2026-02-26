@@ -19,10 +19,8 @@ function App() {
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
   const [selectedArticleId, setSelectedArticleId] = useState<number | null>(null);
 
-  // Initialize EmailJS on app load
   useEffect(() => {
     emailjs.init('HrhrOWrVLj8Pk_4_X');
-    console.log('EmailJS initialized');
   }, []);
 
   const handleOpenArticle = (articleId: number) => {
