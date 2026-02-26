@@ -10,9 +10,21 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { Legal } from './components/Legal';
+import { PortfolioPage } from './components/PortfolioPage';
+import { BlogArticle } from './components/BlogArticle';
 
 function App() {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
+  const [selectedArticleId, setSelectedArticleId] = useState<number | null>(null);
+
+  const handleOpenArticle = (articleId: number) => {
+    setSelectedArticleId(articleId);
+  };
+
+  const handleCloseArticle = () => {
+    setSelectedArticleId(null);
+  };
 
   return (
     <div className="min-h-screen bg-white text-brand-dark selection:bg-brand-orange selection:text-white">
@@ -20,15 +32,17 @@ function App() {
       <main>
         <Hero />
         <Services />
-        <Portfolio />
+        <Portfolio onViewAll={() => setIsPortfolioOpen(true)} />
         <Pricing />
         <Testimonials />
-        <Blog />
+        <Blog onOpenArticle={handleOpenArticle} />
         <Contact />
       </main>
       <Footer onOpenLegal={() => setIsLegalOpen(true)} />
       <CookieBanner />
       <Legal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />
+      <PortfolioPage isOpen={isPortfolioOpen} onClose={() => setIsPortfolioOpen(false)} />
+      <BlogArticle articleId={selectedArticleId} onClose={handleCloseArticle} />
     </div>
   );
 }
