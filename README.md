@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Bingo Agency
 
-# Run and deploy your AI Studio app
+Agence digitale moderne spécialisée dans la création de sites web et applications.
 
-This contains everything you need to run your app locally.
+## Déploiement Live
 
-View your app in AI Studio: https://ai.studio/apps/956e8c9a-09ba-4f4a-a2be-f31fe72deb13
+**URL:** https://bingo-agency26.github.io/Bingo-Agency/
 
-## Run Locally
+Site déployé automatiquement via GitHub Actions.
 
-**Prerequisites:**  Node.js
+## Améliorations UX Récentes
 
+- ✅ Espacement Hero optimisé (pt-56 mobile / pt-64 desktop)
+- ✅ Bouton "Audit Gratuit" header agrandi (py-3 px-6)
+- ✅ Badge Social Media décollé (mb-10)
+- ✅ Logo footer intégré
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Technologies
+
+- React + TypeScript
+- Vite
+- TailwindCSS
+- Lucide Icons
+- GitHub Pages
+
+## Développement Local
+
+**Prérequis:** Node.js 20+
+
+```bash
+# Installation
+npm install
+
+# Configuration API
+echo "GEMINI_API_KEY=votre_cle" > .env.local
+
+# Lancement dev
+npm run dev
+
+# Build production
+npm run build
+```
+
+## Structure
+
+```
+Bingo-Agency/
+├── components/     # Composants React
+├── public/        # Assets statiques
+├── constants.ts   # Config & données
+└── App.tsx        # Application principale
+```
+
+---
+
+**Bingo Agency © 2026** | Toulouse, France
