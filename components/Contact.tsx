@@ -24,10 +24,10 @@ export const Contact: React.FC = () => {
 
     try {
       await emailjs.send(
-        'YOUR_SERVICE_ID',        // À remplacer
-        'YOUR_TEMPLATE_ID',       // À remplacer
+        'service_6npek0d',
+        'template_d3dbevc',
         formData,
-        'YOUR_PUBLIC_KEY'         // À remplacer
+        'HrhrOWrVLj8Pk_4_X'
       );
       setSubmitStatus('success');
       form.reset();
