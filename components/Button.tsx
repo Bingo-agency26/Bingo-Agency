@@ -1,10 +1,12 @@
 import React from 'react';
+import { LucideIcon } from 'lucide-react';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: 'primary' | 'outline' | 'white';
   fullWidth?: boolean;
   href?: string;
+  icon?: LucideIcon;
 }
 
 export const Button: React.FC<ButtonProps> = ({ 
@@ -12,10 +14,11 @@ export const Button: React.FC<ButtonProps> = ({
   variant = 'primary', 
   fullWidth = false,
   href,
+  icon: Icon,
   className = '',
   ...props 
 }) => {
-  const baseStyles = "inline-flex items-center justify-center px-6 py-3 font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg rounded-lg";
+  const baseStyles = "inline-flex items-center justify-center gap-2 px-6 py-3 font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg rounded-lg";
   
   const variants = {
     primary: "bg-brand-orange text-white hover:bg-orange-600 shadow-orange-500/30",
@@ -25,6 +28,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   const widthClass = fullWidth ? "w-full" : "";
 
+  const content = (
+    <>
+      {children}
+      {Icon && <Icon size={20} />}
+    </>
+  );
+
   if (href) {
     return (
       <a 
@@ -33,7 +43,7 @@ export const Button: React.FC<ButtonProps> = ({
         rel="noopener noreferrer"
         className={`${baseStyles} ${variants[variant]} ${widthClass} ${className}`}
       >
-        {children}
+        {content}
       </a>
     );
   }
@@ -43,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={`${baseStyles} ${variants[variant]} ${widthClass} ${className}`}
       {...props}
     >
-      {children}
+      {content}
     </button>
   );
 };
