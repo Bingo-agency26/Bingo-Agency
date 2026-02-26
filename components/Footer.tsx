@@ -1,7 +1,6 @@
 import React from 'react';
-import { LINKS } from '../constants';
+import { LINKS, IMAGES } from '../constants';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
-import logoFooter from '../public/assets/images/logo-footer.png';
 
 interface FooterProps {
   onOpenLegal: () => void;
@@ -17,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           {/* Brand */}
           <div className="max-w-sm">
             <img 
-              src={logoFooter}
+              src={IMAGES.logoFooter}
               alt="Bingo Agency" 
               className="w-40 mb-4 object-contain"
             />
