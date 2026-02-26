@@ -16,19 +16,21 @@ export const Contact: React.FC = () => {
     const form = e.currentTarget;
     const formData = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
-      company: (form.elements.namedItem('company') as HTMLInputElement).value,
+      company: (form.elements.namedItem('company') as HTMLInputElement).value || 'Non renseigné',
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value || 'Non renseigné',
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     };
 
     try {
-      await emailjs.send(
+      const response = await emailjs.send(
         'service_6npek0d',
         'template_d3dbevc',
         formData,
         'HrhrOWrVLj8Pk_4_X'
       );
+      
+      console.log('EmailJS Response:', response);
       setSubmitStatus('success');
       form.reset();
       setTimeout(() => setSubmitStatus('idle'), 5000);
