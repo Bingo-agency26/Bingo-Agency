@@ -44,17 +44,18 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
   }, []);
 
   return (
-    <section id="portfolio" className="py-16 md:py-20 lg:py-24 bg-brand-gray relative overflow-hidden">
+    <section id="portfolio" className="py-16 md:py-20 lg:py-24 relative overflow-hidden" style={{backgroundColor: '#F9F7F2'}}>
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 md:mb-16">
           <div className="max-w-2xl">
-            <h2 className="text-xs md:text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Portfolio</h2>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">Nos dernières réalisations</h3>
+            <h2 className="text-xs md:text-sm font-bold uppercase tracking-wider mb-2" style={{color: '#FF4500'}}>Portfolio</h2>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold" style={{color: '#1A1A1A'}}>Nos dernières réalisations</h3>
           </div>
           <button
             onClick={onViewAll}
-            className="hidden md:block text-brand-blue font-semibold hover:underline mt-4 md:mt-0 transition-colors"
+            className="hidden md:block font-semibold hover:underline mt-4 md:mt-0 transition-colors"
+            style={{color: '#FF4500'}}
           >
             Voir tous les projets →
           </button>
@@ -68,9 +69,10 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
                 key={index}
                 className={`group relative overflow-hidden rounded-2xl aspect-[4/5] transition-all duration-700 ${
                   index === currentSlide
-                    ? 'ring-4 ring-brand-orange scale-105 z-10'
+                    ? 'scale-105 z-10'
                     : 'opacity-70 hover:opacity-100'
                 }`}
+                style={index === currentSlide ? {boxShadow: `0 0 0 4px #FF4500`} : {}}
               >
                 <img 
                   src={project.image} 
@@ -80,9 +82,9 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-6 ${
                   index === currentSlide ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                 }`}>
-                  <span className="text-brand-blue text-xs font-bold uppercase tracking-wider mb-1">{project.category}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider mb-1" style={{color: '#FF4500'}}>{project.category}</span>
                   <h4 className="text-white text-xl font-bold mb-2">{project.title}</h4>
-                  <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium">
+                  <div className="inline-block backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium" style={{backgroundColor: 'rgba(255, 255, 255, 0.2)'}}>
                     {project.stats}
                   </div>
                 </div>
@@ -96,11 +98,13 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all ${
-                  index === currentSlide
-                    ? 'w-8 bg-brand-orange'
-                    : 'w-2 bg-gray-300 hover:bg-gray-400'
-                }`}
+                className={`h-2 rounded-full transition-all`}
+                style={{
+                  width: index === currentSlide ? '32px' : '8px',
+                  backgroundColor: index === currentSlide ? '#FF4500' : '#D0D0D0'
+                }}
+                onMouseEnter={(e) => { if (index !== currentSlide) e.currentTarget.style.backgroundColor = '#9B9B9B'; }}
+                onMouseLeave={(e) => { if (index !== currentSlide) e.currentTarget.style.backgroundColor = '#D0D0D0'; }}
                 aria-label={`Voir projet ${index + 1}`}
               />
             ))}
@@ -110,7 +114,8 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
         <div className="mt-8 text-center md:hidden">
           <button
             onClick={onViewAll}
-            className="text-brand-blue font-semibold hover:underline transition-colors"
+            className="font-semibold hover:underline transition-colors"
+            style={{color: '#FF4500'}}
           >
             Voir tous les projets →
           </button>
