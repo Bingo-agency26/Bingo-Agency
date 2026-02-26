@@ -31,8 +31,8 @@ export const STATS = [
 export const PRICING = [
   {
     title: "Pub Digitale Starter",
-    price: "Sur devis",
-    period: "",
+    price: "À partir de 250",
+    period: "€/mois",
     features: [
       "Budget pub optimisé",
       "Gestion Google/Bing Ads",
@@ -43,8 +43,8 @@ export const PRICING = [
   },
   {
     title: "Réseaux Sociaux",
-    price: "Sur devis",
-    period: "",
+    price: "À partir de 150",
+    period: "€/mois",
     features: [
       "Stratégie & Conseil",
       "Création de contenus (Reels, Posts)",
@@ -55,8 +55,8 @@ export const PRICING = [
   },
   {
     title: "Print & Charte",
-    price: "Sur devis",
-    period: "",
+    price: "À partir de 70",
+    period: "€",
     features: [
       "Identité Visuelle Complète",
       "Logo & Charte Graphique",
