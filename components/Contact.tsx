@@ -14,28 +14,21 @@ export const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     const form = e.currentTarget;
-    const formData = {
-      name: (form.elements.namedItem('name') as HTMLInputElement).value,
-      company: (form.elements.namedItem('company') as HTMLInputElement).value || 'Non renseigné',
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      phone: (form.elements.namedItem('phone') as HTMLInputElement).value || 'Non renseigné',
-      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
-    };
-
+    
     try {
-      const response = await emailjs.send(
+      const response = await emailjs.sendForm(
         'service_6npek0d',
         'template_d3dbevc',
-        formData,
-        'HrhrOWrVLj8Pk_4_X'
+        form
       );
       
-      console.log('EmailJS Response:', response);
+      console.log('✅ EmailJS Success:', response.status, response.text);
       setSubmitStatus('success');
       form.reset();
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    } catch (error) {
-      console.error('Erreur envoi email:', error);
+    } catch (error: any) {
+      console.error('❌ EmailJS Error:', error);
+      console.error('Error details:', error.text || error.message);
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
@@ -184,7 +177,7 @@ export const Contact: React.FC = () => {
 
               {/* Success Message */}
               {submitStatus === 'success' && (
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div className="p-4 bg-green-50 border border-green-200 rounded-lg animate-in fade-in duration-300">
                   <p className="text-green-800 text-sm font-medium flex items-center gap-2">
                     <Check size={18} />
                     Message envoyé avec succès ! Nous vous répondons sous 24h.
@@ -194,7 +187,7 @@ export const Contact: React.FC = () => {
 
               {/* Error Message */}
               {submitStatus === 'error' && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="p-4 bg-red-50 border border-red-200 rounded-lg animate-in fade-in duration-300">
                   <p className="text-red-800 text-sm font-medium">
                     Erreur lors de l'envoi. Contactez-nous directement à {LINKS.email}
                   </p>
