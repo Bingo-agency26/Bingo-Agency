@@ -1,6 +1,7 @@
 import React from 'react';
-import { IMAGES, LINKS } from '../constants';
-import { Facebook, Linkedin, Instagram, Mail } from 'lucide-react';
+import { LINKS } from '../constants';
+import { Facebook, Linkedin, Instagram } from 'lucide-react';
+import logoFooter from '../public/assets/images/logo-footer.png';
 
 interface FooterProps {
   onOpenLegal: () => void;
@@ -16,12 +17,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           {/* Brand */}
           <div className="max-w-sm">
             <img 
-              src="/Bingo-Agency/assets/images/logo-footer.png"
+              src={logoFooter}
               alt="Bingo Agency" 
               className="w-40 mb-4 object-contain"
-              onError={(e) => {
-                e.currentTarget.src = IMAGES.logoHeader;
-              }}
             />
             <p className="text-gray-400 text-sm leading-relaxed">
               Social Media Marketing Agency à Toulouse.
