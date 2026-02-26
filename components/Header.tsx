@@ -25,9 +25,10 @@ export const Header: React.FC = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md shadow-sm ${
         isScrolled ? 'py-4' : 'py-6'
       }`}
+      style={{backgroundColor: 'rgba(249, 247, 242, 0.95)'}}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
@@ -45,7 +46,10 @@ export const Header: React.FC = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="font-medium text-sm uppercase tracking-wide text-brand-dark hover:text-brand-orange transition-colors"
+              className="font-medium text-sm uppercase tracking-wide transition-colors"
+              style={{color: '#1A1A1A'}}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'}
+              onMouseLeave={(e) => e.currentTarget.style.color = '#1A1A1A'}
             >
               {link.name}
             </a>
@@ -66,23 +70,25 @@ export const Header: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden relative z-50 text-brand-dark"
+            className="md:hidden relative z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            style={{color: '#1A1A1A'}}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {/* Mobile Nav Overlay */}
-        <div className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden ${
+        <div className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 md:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
+        }`} style={{backgroundColor: '#F9F7F2'}}>
           {navLinks.map((link) => (
             <a 
               key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-bold text-brand-dark hover:text-brand-orange"
+              className="text-2xl font-bold"
+              style={{color: '#1A1A1A'}}
             >
               {link.name}
             </a>

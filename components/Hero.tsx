@@ -5,7 +5,7 @@ import { LINKS, IMAGES, STATS } from '../constants';
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-28 md:pt-32 pb-20 overflow-hidden bg-brand-gray">
+    <section className="relative min-h-screen flex items-center pt-28 md:pt-32 pb-20 overflow-hidden" style={{backgroundColor: '#F9F7F2'}}>
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -13,28 +13,28 @@ export const Hero: React.FC = () => {
           alt="Office Background" 
           className="w-full h-full object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#F9F7F2] via-[#F9F7F2]/90 to-transparent"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         <div className="max-w-3xl animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-100 text-brand-orange font-semibold text-xs md:text-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border" style={{backgroundColor: '#FFEBE5', borderColor: '#FF4500', color: '#FF4500'}}>
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{backgroundColor: '#FF4500'}}></span>
+              <span className="relative inline-flex rounded-full h-3 w-3" style={{backgroundColor: '#FF4500'}}></span>
             </span>
-            Social Media Marketing Agency à Toulouse
+            <span className="font-semibold text-xs md:text-sm">Social Media Marketing Agency à Toulouse</span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-brand-dark leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6" style={{color: '#1A1A1A'}}>
             Propulsez votre <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yellow-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-[#FF6B35]">
               Business
             </span> vers de nouveaux sommets.
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+          <p className="text-lg md:text-xl mb-8 leading-relaxed max-w-xl" style={{color: '#4A4A4A'}}>
             De la stratégie digitale à l'identité visuelle, nous transformons votre communication en levier de croissance. Publicité, Social Media, Print & Branding.
           </p>
           
@@ -50,9 +50,9 @@ export const Hero: React.FC = () => {
           {/* Stats - Responsive Grid */}
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {STATS.map((stat, index) => (
-              <div key={index} className="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-gray-100">
-                <p className="text-2xl md:text-3xl font-bold text-brand-orange">{stat.value}</p>
-                <p className="text-[10px] md:text-xs text-gray-500 font-medium uppercase tracking-wide mt-1 leading-tight">{stat.label} <span className="text-gray-400 normal-case">{stat.suffix}</span></p>
+              <div key={index} className="bg-white p-3 md:p-4 rounded-xl shadow-sm" style={{borderWidth: '1px', borderColor: '#EFEEEE'}}>
+                <p className="text-2xl md:text-3xl font-bold" style={{color: '#FF4500'}}>{stat.value}</p>
+                <p className="text-[10px] md:text-xs font-medium uppercase tracking-wide mt-1 leading-tight" style={{color: '#6B6B6B'}}>{stat.label} <span style={{color: '#9B9B9B'}} className="normal-case">{stat.suffix}</span></p>
               </div>
             ))}
           </div>
@@ -72,15 +72,15 @@ export const Hero: React.FC = () => {
             />
           </div>
           {/* Decorative Elements */}
-          <div className="absolute -top-10 -right-10 w-64 h-64 bg-brand-orange/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-64 h-64 rounded-full blur-3xl" style={{backgroundColor: 'rgba(255, 69, 0, 0.1)'}}></div>
+          <div className="absolute -bottom-10 -left-10 w-64 h-64 rounded-full blur-3xl" style={{backgroundColor: 'rgba(255, 107, 53, 0.1)'}}></div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:block">
-        <div className="w-6 h-10 border-2 border-brand-orange/30 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-brand-orange rounded-full animate-scroll"></div>
+        <div className="w-6 h-10 border-2 rounded-full flex justify-center p-1" style={{borderColor: 'rgba(255, 69, 0, 0.3)'}}>
+          <div className="w-1 h-2 rounded-full animate-scroll" style={{backgroundColor: '#FF4500'}}></div>
         </div>
       </div>
     </section>
