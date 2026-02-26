@@ -16,9 +16,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           {/* Brand */}
           <div className="max-w-sm">
             <img 
-              src={IMAGES.logoFooter} 
+              src="/Bingo-Agency/assets/images/logo-footer.png"
               alt="Bingo Agency" 
               className="w-40 mb-4 object-contain"
+              onError={(e) => {
+                e.currentTarget.src = IMAGES.logoHeader;
+              }}
             />
             <p className="text-gray-400 text-sm leading-relaxed">
               Social Media Marketing Agency à Toulouse.
@@ -37,9 +40,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
             </a>
             <a href={LINKS.instagram} target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-brand-orange hover:text-white transition-all">
               <Instagram size={20} />
-            </a>
-            <a href={LINKS.tiktok} target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-brand-orange hover:text-white transition-all">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
             </a>
           </div>
         </div>
