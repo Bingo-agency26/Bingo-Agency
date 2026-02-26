@@ -5,62 +5,48 @@ import { PRICING, LINKS } from '../constants';
 
 export const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="pricing" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
+      <div className="absolute -left-20 top-40 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -right-20 bottom-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-sm font-bold text-brand-orange uppercase tracking-wider mb-2">Tarifs</h2>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-3 md:mb-4">
-            Des offres adaptées à votre ambition
-          </h3>
-          <p className="text-base md:text-lg text-gray-600">
+          <h2 className="text-xs md:text-sm font-bold text-brand-blue uppercase tracking-wider mb-2">Tarifs</h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark mb-3 md:mb-4">Des offres adaptées à votre ambition</h3>
+          <p className="text-sm md:text-base text-gray-600">
             Chaque projet est unique. Contactez-nous pour une proposition sur-mesure.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {PRICING.map((plan, index) => (
             <div 
               key={index} 
-              className={`relative p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col border-2 ${
+              className={`relative p-6 md:p-8 rounded-2xl border flex flex-col ${
                 plan.highlight 
-                  ? 'border-brand-orange bg-white lg:scale-105 lg:-translate-y-2' 
-                  : 'border-transparent bg-white hover:border-gray-200'
+                  ? 'border-brand-orange bg-brand-dark text-white shadow-xl lg:scale-105 z-10' 
+                  : 'border-gray-100 bg-white text-brand-dark hover:border-brand-blue/30 transition-colors'
               }`}
             >
               {plan.highlight && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-orange text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg uppercase tracking-wide">
-                  RECOMMANDÉ
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-orange text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-lg">
+                  Recommandé
                 </div>
               )}
               
-              <div className="mb-6">
-                <h4 className="text-lg md:text-xl font-bold text-brand-dark mb-3 min-h-[3rem] leading-tight">
-                  {plan.title}
-                </h4>
-                <div className="flex items-end gap-1 mb-2">
-                  <span className="text-3xl md:text-4xl font-bold text-brand-dark">
-                    {plan.price}
-                  </span>
-                  {plan.period && (
-                    <span className="text-base md:text-lg text-gray-600 font-medium mb-1">
-                      {plan.period}
-                    </span>
-                  )}
+              <div className="mb-6 md:mb-8">
+                <h4 className={`text-base md:text-lg font-bold mb-2 ${plan.highlight ? 'text-white' : 'text-brand-dark'}`}>{plan.title}</h4>
+                <div className="flex items-baseline gap-1">
+                  <span className={`text-xl md:text-2xl font-bold ${plan.highlight ? 'text-white' : 'text-brand-dark'}`}>{plan.price}</span>
+                  <span className={`text-sm ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>{plan.period}</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 flex-1">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <Check 
-                      size={18} 
-                      className={`shrink-0 mt-0.5 ${
-                        plan.highlight ? 'text-brand-orange' : 'text-green-500'
-                      }`} 
-                    />
-                    <span className="text-sm text-gray-700 leading-snug font-medium">
-                      {feature}
-                    </span>
+                  <li key={idx} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm">
+                    <Check size={16} className={`shrink-0 mt-0.5 md:w-[18px] md:h-[18px] ${plan.highlight ? 'text-brand-orange' : 'text-green-500'}`} />
+                    <span className={plan.highlight ? 'text-gray-300' : 'text-gray-600'}>{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -68,21 +54,12 @@ export const Pricing: React.FC = () => {
               <Button 
                 href={LINKS.booking} 
                 variant={plan.highlight ? 'primary' : 'outline'} 
-                className="w-full justify-center py-3.5 font-semibold text-base shadow-md hover:shadow-lg"
+                className="w-full justify-center py-3"
               >
                 Demander un devis
               </Button>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12 md:mt-16">
-          <p className="text-gray-600 text-sm md:text-base mb-4">
-            🎁 <span className="font-semibold text-brand-dark">Premier audit offert</span> pour tout nouveau client
-          </p>
-          <p className="text-xs md:text-sm text-gray-500">
-            Prix indicatifs · Devis personnalisé selon vos besoins · Engagement sans frais cachés
-          </p>
         </div>
       </div>
     </section>
