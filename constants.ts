@@ -279,5 +279,104 @@ export const BLOG_POSTS = [
     date: "2026-02-17",
     readTime: "10 min",
     content: `<p class="mb-6">IA marketing 2026...</p>`
+  },
+  {
+    id: 11,
+    title: "SEO Local Toulouse 2026 : Checklist Express pour Amener plus de Clients en 30 Jours",
+    slug: "seo-local-toulouse-checklist-30-jours",
+    category: "SEO",
+    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
+    excerpt: "TPE, artisans, restaurants à Toulouse : suivez cette checklist SEO local en 30 jours pour remonter dans le Top 3 Google Maps et générer plus d’appels.",
+    date: "2026-02-27",
+    readTime: "9 min",
+    content: `
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Pourquoi le SEO local est vital à Toulouse en 2026</h3>
+      <p class="mb-6">
+        À Toulouse, plus de 40% des recherches Google ont une intention locale ("près de moi", "à Toulouse", "ouvert maintenant").
+        Si votre entreprise n'apparaît pas dans le Top 3 du pack Google Maps, vous laissez vos concurrents capter la majorité des appels et des visites.
+      </p>
+
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Jour 1-3 : Fiche Google Business Profile 100% complétée</h3>
+      <ul class="mb-6 list-disc list-inside space-y-1">
+        <li>Vérifiez que votre fiche est bien revendiquée et validée.</li>
+        <li>Choisissez une catégorie principale ultra précise (ex : "Plombier" plutôt que "Services").</li>
+        <li>Ajoutez toutes les catégories secondaires pertinentes.</li>
+        <li>Remplissez les horaires, services, description et lien vers votre site web.</li>
+        <li>Ajoutez au minimum 10 photos récentes et de bonne qualité.</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Jour 4-10 : Booster vos avis Google à Toulouse</h3>
+      <p class="mb-4">
+        Les avis sont le premier signal de confiance pour vos futurs clients, et un critère clé de classement pour Google.
+        Visez au moins 20 avis avec une note supérieure à 4,5★.
+      </p>
+      <ul class="mb-6 list-disc list-inside space-y-1">
+        <li>Créez un lien direct vers votre page d'avis Google.</li>
+        <li>Envoyez ce lien après chaque prestation (SMS, email, WhatsApp).</li>
+        <li>Répondez à 100% des avis, positifs comme négatifs, en moins de 48h.</li>
+        <li>Affichez un QR code avis dans vos locaux ou sur vos factures.</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Jour 11-20 : Contenu hyperlocal sur votre site</h3>
+      <p class="mb-4">
+        Votre site doit prouver à Google que vous êtes une référence locale sur votre secteur à Toulouse et en Haute-Garonne.
+      </p>
+      <ul class="mb-6 list-disc list-inside space-y-1">
+        <li>Créez une page dédiée "Votre activité + Toulouse" (ex : "Plombier d'urgence à Toulouse").</li>
+        <li>Ajoutez des sections par quartier : Capitole, Saint-Cyprien, Rangueil, Blagnac, Labège…</li>
+        <li>Publiez 2 à 3 articles de blog ciblant des questions locales ("prix", "urgence", "meilleur").</li>
+        <li>Intégrez des témoignages clients situés à Toulouse et alentours.</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Jour 21-27 : Cohérence NAP & citations locales</h3>
+      <p class="mb-4">
+        NAP = Name, Address, Phone. Ces informations doivent être identiques partout en ligne.
+        La moindre différence peut faire douter Google de votre fiabilité.
+      </p>
+      <ul class="mb-6 list-disc list-inside space-y-1">
+        <li>Vérifiez votre nom, adresse et téléphone sur : votre site, Google, Facebook, PagesJaunes, annuaires locaux.</li>
+        <li>Corrigez toutes les anciennes adresses ou numéros de téléphone.</li>
+        <li>Inscrivez votre entreprise sur 5 à 10 annuaires locaux de qualité (CCI, pages pros, portails métiers).</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Jour 28-30 : Vitesse mobile & dernière vérification</h3>
+      <p class="mb-4">
+        La majorité des recherches locales se font sur mobile. Un site lent ou mal adapté fera fuir vos futurs clients dès la première seconde.
+      </p>
+      <ul class="mb-6 list-disc list-inside space-y-1">
+        <li>Testez votre site sur Google PageSpeed Insights (version mobile).</li>
+        <li>Optimisez vos images, votre hébergement et supprimez les scripts inutiles.</li>
+        <li>Vérifiez que votre numéro de téléphone est cliquable sur mobile.</li>
+        <li>Testez votre parcours utilisateur : recherche Google → fiche → site → contact.</li>
+      </ul>
+
+      <div class="bg-orange-50 p-6 rounded-xl border border-orange-100 my-8">
+        <h4 class="font-bold text-brand-orange mb-2">✅ Checklist SEO Local Toulouse - Bingo Agency</h4>
+        <ul class="text-sm space-y-1">
+          <li>• Fiche Google Business Profile complétée à 100%</li>
+          <li>• 20+ avis Google avec réponse systématique</li>
+          <li>• 3 pages ou articles ciblant "activité + Toulouse"</li>
+          <li>• NAP identique sur 10 plateformes minimum</li>
+          <li>• Site rapide et lisible sur mobile</li>
+        </ul>
+      </div>
+
+      <h3 class="text-2xl font-bold mb-4 text-brand-dark">Besoin d'aller plus vite ?</h3>
+      <p class="mb-6">
+        La plupart des TPE/PME savent qu'elles doivent travailler leur SEO local, mais manquent de temps, de méthode ou de suivi.
+        C'est précisément ce que nous faisons pour nos clients à Toulouse : des actions concrètes, mesurables, orientées résultats.
+      </p>
+      <p class="mb-2 font-semibold">
+        Si vous voulez passer devant vos concurrents sur Google Maps en 2026, le meilleur moment pour lancer votre plan d'action, c'est maintenant.
+      </p>
+      <a
+        href="https://calendly.com/bingo-agency-fr/30min"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-brand-orange text-white rounded-full font-bold hover:shadow-xl transition-all"
+      >
+        Réserver un Audit SEO Local Gratuit
+      </a>
+    `
   }
 ];
