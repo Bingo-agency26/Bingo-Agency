@@ -43,6 +43,19 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
     return () => clearInterval(interval);
   }, []);
 
+  // Generate responsive srcset for Unsplash images
+  const getResponsiveSrcSet = (url: string) => {
+    if (!url.includes('unsplash.com')) return url;
+    const baseUrl = url.split('?')[0];
+    return `${baseUrl}?auto=format&fit=crop&q=80&w=400 400w, ${baseUrl}?auto=format&fit=crop&q=80&w=600 600w, ${baseUrl}?auto=format&fit=crop&q=80&w=800 800w`;
+  };
+
+  const getSrc = (url: string) => {
+    if (!url.includes('unsplash.com')) return url;
+    const baseUrl = url.split('?')[0];
+    return `${baseUrl}?auto=format&fit=crop&q=80&w=600`;
+  };
+
   return (
     <section id="portfolio" className="py-16 md:py-20 lg:py-24 relative overflow-hidden" style={{backgroundColor: '#F9F7F2'}}>
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/50 to-transparent pointer-events-none"></div>
@@ -75,8 +88,11 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
                 style={index === currentSlide ? {boxShadow: `0 0 0 4px #FF4500`} : {}}
               >
                 <img 
-                  src={project.image} 
-                  alt={project.title} 
+                  src={getSrc(project.image)}
+                  srcSet={getResponsiveSrcSet(project.image)}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  alt={project.title}
+                  loading={index === 0 ? 'eager' : 'lazy'}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 flex flex-col justify-end p-6 ${
