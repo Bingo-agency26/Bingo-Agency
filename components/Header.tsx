@@ -64,7 +64,10 @@ export const Header: React.FC = () => {
             <img 
               src={IMAGES.logoHeader} 
               alt="Bingo Agency" 
-              className="h-10 md:h-12 object-contain" 
+              width="190"
+              height="70"
+              className="h-10 md:h-12 w-auto object-contain"
+              fetchpriority="high"
             />
           </a>
 
