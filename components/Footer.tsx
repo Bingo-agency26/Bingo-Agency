@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               alt="Bingo Agency" 
               className="w-40 mb-4 object-contain"
             />
-            <p className="text-sm leading-relaxed" style={{color: '#B0B0B0'}}>
+            <p className="text-sm leading-relaxed" style={{color: '#E0E0E0'}}>
               Social Media Marketing Agency à Toulouse.
               <br/>
               Nous propulsons votre marque vers de nouveaux sommets.
@@ -29,13 +29,40 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
 
           {/* Socials */}
           <div className="flex gap-4">
-            <a href={LINKS.facebook} target="_blank" rel="noreferrer" className="p-3 rounded-full transition-all" style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}} onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}} onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}>
+            <a 
+              href={LINKS.facebook} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3 rounded-full transition-all" 
+              style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}
+              aria-label="Facebook Bingo Agency"
+              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}}
+              onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}
+            >
               <Facebook size={20} />
             </a>
-            <a href={LINKS.linkedin} target="_blank" rel="noreferrer" className="p-3 rounded-full transition-all" style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}} onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}} onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}>
+            <a 
+              href={LINKS.linkedin} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3 rounded-full transition-all" 
+              style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}
+              aria-label="LinkedIn Bingo Agency"
+              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}}
+              onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}
+            >
               <Linkedin size={20} />
             </a>
-            <a href={LINKS.instagram} target="_blank" rel="noreferrer" className="p-3 rounded-full transition-all" style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}} onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}} onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}>
+            <a 
+              href={LINKS.instagram} 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3 rounded-full transition-all" 
+              style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}
+              aria-label="Instagram Bingo Agency"
+              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}}
+              onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}
+            >
               <Instagram size={20} />
             </a>
           </div>
@@ -44,29 +71,29 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div>
              <h4 className="font-bold mb-4 text-white">Contact</h4>
-             <ul className="space-y-2 text-sm" style={{color: '#B0B0B0'}}>
-               <li><a href={`mailto:${LINKS.email}`} className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>{LINKS.email}</a></li>
+             <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
+               <li><a href={`mailto:${LINKS.email}`} className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>{LINKS.email}</a></li>
                <li>Toulouse, France</li>
              </ul>
           </div>
           <div>
             <h4 className="font-bold mb-4 text-white">Navigation</h4>
-            <ul className="space-y-2 text-sm" style={{color: '#B0B0B0'}}>
-              <li><a href="#services" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>Services</a></li>
-              <li><a href="#portfolio" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>Réalisations</a></li>
-              <li><a href="#pricing" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>Tarifs</a></li>
+            <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
+              <li><a href="#services" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Services</a></li>
+              <li><a href="#portfolio" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Réalisations</a></li>
+              <li><a href="#pricing" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Tarifs</a></li>
             </ul>
           </div>
           <div>
              <h4 className="font-bold mb-4 text-white">Légal</h4>
-             <ul className="space-y-2 text-sm" style={{color: '#B0B0B0'}}>
-                <li><button onClick={onOpenLegal} className="transition-colors text-left" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>Mentions Légales</button></li>
-                <li><button onClick={onOpenLegal} className="transition-colors text-left" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0B0'}>Politique de Confidentialité</button></li>
+             <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
+                <li><button onClick={onOpenLegal} className="transition-colors text-left" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Mentions Légales</button></li>
+                <li><button onClick={onOpenLegal} className="transition-colors text-left" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Politique de Confidentialité</button></li>
              </ul>
           </div>
         </div>
 
-        <div className="text-center text-xs pt-8" style={{color: '#6B6B6B'}}>
+        <div className="text-center text-xs pt-8" style={{color: '#A0A0A0'}}>
           <p>© {currentYear} Bingo Agency. Tous droits réservés.</p>
         </div>
       </div>

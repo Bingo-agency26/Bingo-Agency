@@ -108,15 +108,18 @@ export const Portfolio: React.FC<PortfolioProps> = ({ onViewAll }) => {
             ))}
           </div>
 
-          {/* Slideshow Indicators */}
-          <div className="flex justify-center gap-2 mt-8">
+          {/* Slideshow Indicators - Increased touch target */}
+          <div className="flex justify-center gap-3 mt-8">
             {projects.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all`}
+                className={`rounded-full transition-all`}
                 style={{
-                  width: index === currentSlide ? '32px' : '8px',
+                  width: index === currentSlide ? '32px' : '32px',
+                  height: '12px',
+                  minWidth: '32px',
+                  minHeight: '12px',
                   backgroundColor: index === currentSlide ? '#FF4500' : '#D0D0D0'
                 }}
                 onMouseEnter={(e) => { if (index !== currentSlide) e.currentTarget.style.backgroundColor = '#9B9B9B'; }}
