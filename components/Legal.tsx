@@ -27,7 +27,7 @@ export const Legal: React.FC<LegalProps> = ({ isOpen, onClose }) => {
             <section>
               <h3 className="text-xl font-bold text-brand-dark mb-4">1. Éditeur du site</h3>
               <p>
-                Le site Bingo Agency est édité par la société BINGO AGENCY, SAS au capital de 100 €, immatriculée au RCS de Toulouse sous le numéro 123 456 789.
+                Le site Bingo Agency est édité par la société BINGO AGENCY, SAS au capital de 100 €, immatriculée au RCS de Toulouse sous le numéro [SIRET à compléter].
                 <br />
                 Siège social : Toulouse, France.
                 <br />
@@ -40,7 +40,9 @@ export const Legal: React.FC<LegalProps> = ({ isOpen, onClose }) => {
             <section>
               <h3 className="text-xl font-bold text-brand-dark mb-4">2. Hébergement</h3>
               <p>
-                Le site est hébergé par [Nom de l'hébergeur], [Adresse de l'hébergeur].
+                Le site est hébergé par IONOS SE, 7 Place de la Gare, 57200 Sarreguemines, France.
+                <br />
+                Site : <a href="https://www.ionos.fr" target="_blank" rel="noopener noreferrer" className="text-brand-primary underline">www.ionos.fr</a>
               </p>
             </section>
 
