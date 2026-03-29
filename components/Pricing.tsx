@@ -39,18 +39,15 @@ export const Pricing: React.FC = () => {
               )}
               
               <div className="mb-6 md:mb-8">
-                <h4 className={`text-base md:text-lg font-bold mb-2`} style={{color: plan.highlight ? 'white' : '#1A1A1A'}}>{plan.title}</h4>
-                {/* Prix masqués - espace conservé pour maintenir la mise en page */}
-                <div className="flex items-baseline gap-1 invisible">
-                  <span className="text-xl md:text-2xl font-bold">{plan.price}</span>
-                  <span className="text-sm">{plan.period}</span>
-                </div>
+                <h4 className="text-base md:text-lg font-bold mb-2" style={{color: plan.highlight ? 'white' : '#1A1A1A'}}>{plan.title}</h4>
+                {/* Prix masqués via style inline */}
+                <div style={{visibility: 'hidden', height: '2rem'}}></div>
               </div>
 
               <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 flex-1">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm">
-                    <Check size={16} className={`shrink-0 mt-0.5 md:w-[18px] md:h-[18px]`} style={{color: plan.highlight ? '#FF4500' : '#22C55E'}} />
+                    <Check size={16} className="shrink-0 mt-0.5 md:w-[18px] md:h-[18px]" style={{color: plan.highlight ? '#FF4500' : '#22C55E'}} />
                     <span style={{color: plan.highlight ? '#D0D0D0' : '#4A4A4A'}}>{feature}</span>
                   </li>
                 ))}
