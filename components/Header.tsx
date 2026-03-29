@@ -15,7 +15,6 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -67,11 +66,11 @@ export const Header: React.FC = () => {
               width="190"
               height="70"
               className="h-10 md:h-12 w-auto object-contain"
-              fetchpriority="high"
+              {...({'fetchpriority': 'high'} as React.ImgHTMLAttributes<HTMLImageElement>)}
             />
           </a>
 
-          {/* Desktop Nav - Centered */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a 
@@ -99,7 +98,6 @@ export const Header: React.FC = () => {
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
             <button 
               className="md:hidden relative z-[110] p-2 -mr-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -112,7 +110,7 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay - Separate from header */}
+      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
           className="fixed inset-0 z-[90] md:hidden"
@@ -129,7 +127,6 @@ export const Header: React.FC = () => {
         style={{backgroundColor: '#FFFFFF', boxShadow: '-4px 0 24px rgba(0,0,0,0.1)'}}
       >
         <div className="h-full flex flex-col pt-24 pb-8 px-6">
-          {/* Navigation Links */}
           <nav className="flex-1 flex flex-col gap-1">
             {navLinks.map((link, index) => (
               <a 
@@ -157,7 +154,6 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
           <div className="pt-6 border-t" style={{borderColor: '#EFEEEE'}}>
             <Button 
               href={LINKS.booking} 
@@ -168,7 +164,6 @@ export const Header: React.FC = () => {
               Réserver un Audit Gratuit
             </Button>
             
-            {/* Contact Info */}
             <div className="mt-6 text-center">
               <p className="text-xs font-medium mb-2" style={{color: '#6B6B6B'}}>Besoin d'aide ?</p>
               <a 
