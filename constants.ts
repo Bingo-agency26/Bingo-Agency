@@ -36,8 +36,8 @@ export const STATS = [
 export const PRICING = [
   {
     title: "Pub Digitale Starter",
-    price: "À partir de 250",
-    period: "€/mois",
+    price: "",
+    period: "",
     features: [
       "Budget pub optimisé",
       "Gestion Google/Bing Ads",
@@ -48,8 +48,8 @@ export const PRICING = [
   },
   {
     title: "Réseaux Sociaux",
-    price: "À partir de 150",
-    period: "€/mois",
+    price: "",
+    period: "",
     features: [
       "Stratégie & Conseil",
       "Création de contenus (Reels, Posts)",
@@ -60,8 +60,8 @@ export const PRICING = [
   },
   {
     title: "Print & Charte",
-    price: "À partir de 70",
-    period: "€",
+    price: "",
+    period: "",
     features: [
       "Identité Visuelle Complète",
       "Logo & Charte Graphique",
@@ -72,7 +72,7 @@ export const PRICING = [
   },
   {
     title: "Full Com 360°",
-    price: "Sur devis",
+    price: "",
     period: "",
     features: [
       "Gestion Complète Digitale + Print",
@@ -163,7 +163,7 @@ export const BLOG_POSTS = [
       <p class="mb-6">Article "Meilleur [service] à Toulouse", "Top 10 [secteur] Haute-Garonne", "Événements [industrie] Occitanie 2026". Intégrez les quartiers : Capitole, Saint-Cyprien, Purpan, Ramonville...</p>
 
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">4. Backlinks Locaux de Qualité</h3>
-      <p class="mb-6">Partenariats avec : CCI Toulouse, La Dêpêche, Actu Toulouse, blogs locaux, associations de commerçants. 10 backlinks .fr locaux > 100 backlinks génériques.</p>
+      <p class="mb-6">Partenariats avec : CCI Toulouse, La Dêpache, Actu Toulouse, blogs locaux, associations de commerçants. 10 backlinks .fr locaux > 100 backlinks génériques.</p>
 
       <h3 class="text-2xl font-bold mb-4 text-brand-dark">5. NAP Consistency (Name, Address, Phone)</h3>
       <p class="mb-6">Votre adresse doit être IDENTIQUE partout : site, Google, Facebook, Pages Jaunes, annuaires. Une variation = confusion pour Google = perte de ranking.</p>
@@ -286,7 +286,7 @@ export const BLOG_POSTS = [
     slug: "seo-local-toulouse-checklist-30-jours",
     category: "SEO",
     image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
-    excerpt: "TPE, artisans, restaurants à Toulouse : suivez cette checklist SEO local en 30 jours pour remonter dans le Top 3 Google Maps et générer plus d’appels.",
+    excerpt: "TPE, artisans, restaurants à Toulouse : suivez cette checklist SEO local en 30 jours pour remonter dans le Top 3 Google Maps et générer plus d'appels.",
     date: "2026-02-27",
     readTime: "9 min",
     content: `

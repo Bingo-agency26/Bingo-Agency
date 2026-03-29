@@ -40,8 +40,6 @@ export const Pricing: React.FC = () => {
               
               <div className="mb-6 md:mb-8">
                 <h4 className="text-base md:text-lg font-bold mb-2" style={{color: plan.highlight ? 'white' : '#1A1A1A'}}>{plan.title}</h4>
-                {/* Prix masqués via style inline */}
-                <div style={{visibility: 'hidden', height: '2rem'}}></div>
               </div>
 
               <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8 flex-1">

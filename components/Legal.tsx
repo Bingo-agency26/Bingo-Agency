@@ -27,7 +27,7 @@ export const Legal: React.FC<LegalProps> = ({ isOpen, onClose }) => {
             <section>
               <h3 className="text-xl font-bold text-brand-dark mb-4">1. Éditeur du site</h3>
               <p>
-                Le site Bingo Agency est édité par la société BINGO AGENCY, SAS au capital de 10 000 €, immatriculée au RCS de Toulouse sous le numéro 123 456 789.
+                Le site Bingo Agency est édité par la société BINGO AGENCY, SAS au capital de 100 €, immatriculée au RCS de Toulouse sous le numéro 123 456 789.
                 <br />
                 Siège social : Toulouse, France.
                 <br />
