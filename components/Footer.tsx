@@ -86,9 +86,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           </div>
           <div>
              <h4 className="font-bold mb-4 text-white">Légal</h4>
-             <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
-                <li><button onClick={onOpenLegal} className="transition-colors text-left" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Mentions Légales</button></li>
-                <li><button onClick={onOpenLegal} className="transition-colors text-left" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Politique de Confidentialité</button></li>
+             <ul className="space-y-2 text-sm" style={{color: '#606060'}}>
+                <li style={{cursor: 'not-allowed'}} title="Bientôt disponible">Mentions Légales</li>
+                <li style={{cursor: 'not-allowed'}} title="Bientôt disponible">Politique de Confidentialité</li>
              </ul>
           </div>
         </div>
