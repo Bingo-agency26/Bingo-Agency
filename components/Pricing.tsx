@@ -40,9 +40,10 @@ export const Pricing: React.FC = () => {
               
               <div className="mb-6 md:mb-8">
                 <h4 className={`text-base md:text-lg font-bold mb-2`} style={{color: plan.highlight ? 'white' : '#1A1A1A'}}>{plan.title}</h4>
-                <div className="flex items-baseline gap-1">
-                  <span className={`text-xl md:text-2xl font-bold`} style={{color: plan.highlight ? 'white' : '#1A1A1A'}}>{plan.price}</span>
-                  <span className={`text-sm`} style={{color: plan.highlight ? '#B0B0B0' : '#6B6B6B'}}>{plan.period}</span>
+                {/* Prix masqués - espace conservé pour maintenir la mise en page */}
+                <div className="flex items-baseline gap-1 invisible">
+                  <span className="text-xl md:text-2xl font-bold">{plan.price}</span>
+                  <span className="text-sm">{plan.period}</span>
                 </div>
               </div>
 
