@@ -2,7 +2,7 @@ import React from 'react';
 import { MousePointerClick, Share2, Printer, PenTool, Layout, BarChart, CheckCircle2 } from 'lucide-react';
 import { Button } from './Button';
 import { LINKS } from '../constants';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 const services = [
   {
@@ -48,7 +48,7 @@ const services = [
 ];
 
 export const Services: React.FC = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -56,7 +56,7 @@ export const Services: React.FC = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
