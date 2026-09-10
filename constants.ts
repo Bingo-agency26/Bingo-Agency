@@ -27,10 +27,10 @@ export const IMAGES = {
 };
 
 export const STATS = [
-  { label: "Clics/CTR Ads", value: "+40%", suffix: "" },
-  { label: "Croissance Followers", value: "+25%", suffix: "" },
-  { label: "Impressions Print", value: "50k", suffix: "/mois" },
-  { label: "Projets Réalisés", value: "200", suffix: "+" }
+  { label: "Approche", value: "360°", suffix: " Globale" },
+  { label: "Stratégie", value: "100%", suffix: " Sur-mesure" },
+  { label: "Accompagnement", value: "Pro", suffix: " Actif" },
+  { label: "Créativité", value: "∞", suffix: " Sans limite" }
 ];
 
 export const PRICING = [

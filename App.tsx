@@ -38,9 +38,9 @@ function App() {
       <main>
         <Hero />
         <Services />
-        <Portfolio onViewAll={() => setIsPortfolioOpen(true)} />
+        {/* <Portfolio onViewAll={() => setIsPortfolioOpen(true)} /> */}
         <Pricing />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Blog onOpenArticle={handleOpenArticle} />
         <SEODiagnostic />
         <Contact />
@@ -48,7 +48,7 @@ function App() {
       <Footer onOpenLegal={() => setIsLegalOpen(true)} />
       <CookieBanner />
       <Legal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />
-      <PortfolioPage isOpen={isPortfolioOpen} onClose={() => setIsPortfolioOpen(false)} />
+      {/* <PortfolioPage isOpen={isPortfolioOpen} onClose={() => setIsPortfolioOpen(false)} /> */}
       <BlogArticle articleId={selectedArticleId} onClose={handleCloseArticle} />
     </div>
   );

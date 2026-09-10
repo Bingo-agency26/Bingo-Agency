@@ -2,6 +2,7 @@ import React from 'react';
 import { MousePointerClick, Share2, Printer, PenTool, Layout, BarChart, CheckCircle2 } from 'lucide-react';
 import { Button } from './Button';
 import { LINKS } from '../constants';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -47,23 +48,54 @@ const services = [
 ];
 
 export const Services: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 80, damping: 15 }
+    }
+  };
+
   return (
     <section id="services" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+        >
           <h2 className="text-xs md:text-sm font-bold uppercase tracking-wider mb-2" style={{color: '#FF4500'}}>Nos Expertises</h2>
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{color: '#1A1A1A'}}>Une approche 360° pour votre croissance</h3>
           <p className="text-sm md:text-base" style={{color: '#4A4A4A'}}>
             Nous combinons créativité et data pour déployer des stratégies omnicanales qui convertissent.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
           {services.map((service, index) => (
-            <div 
+            <motion.div 
               key={index} 
-              className="group p-6 md:p-8 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              variants={itemVariants}
+              whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
+              className="p-6 md:p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-shadow duration-300"
               style={{borderWidth: '1px', borderColor: '#EFEEEE'}}
             >
               <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6" style={{backgroundColor: service.color}}>
@@ -81,11 +113,16 @@ export const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
           
           {/* Call to Action Card */}
-          <div className="p-6 md:p-8 rounded-2xl text-white flex flex-col justify-center items-center text-center" style={{backgroundColor: '#1A1A1A'}}>
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="p-6 md:p-8 rounded-2xl text-white flex flex-col justify-center items-center text-center" style={{backgroundColor: '#1A1A1A'}}
+          >
             <BarChart size={40} className="md:w-12 md:h-12 mb-5 md:mb-6" style={{color: '#FF4500'}} />
             <h4 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Besoin d'une stratégie sur-mesure ?</h4>
             <p className="mb-6 md:mb-8 text-xs md:text-sm leading-relaxed" style={{color: '#B0B0B0'}}>
@@ -94,9 +131,10 @@ export const Services: React.FC = () => {
             <Button href={LINKS.booking} variant="primary" className="w-full py-3.5">
               Réserver un Audit
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 };
+
