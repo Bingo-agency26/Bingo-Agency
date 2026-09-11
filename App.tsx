@@ -1,56 +1,57 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { Portfolio } from './components/Portfolio';
-import { Pricing } from './components/Pricing';
-import { Testimonials } from './components/Testimonials';
-import { Blog } from './components/Blog';
-import { SEODiagnostic } from './components/SEODiagnostic';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { Legal } from './components/Legal';
-import { PortfolioPage } from './components/PortfolioPage';
-import { BlogArticle } from './components/BlogArticle';
+import { CustomCursor } from './components/CustomCursor';
+import { HomePage } from './pages/HomePage';
+import { ServicesPage } from './pages/ServicesPage';
+import { AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 function App() {
   const [isLegalOpen, setIsLegalOpen] = useState(false);
-  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
-  const [selectedArticleId, setSelectedArticleId] = useState<number | null>(null);
 
   useEffect(() => {
     emailjs.init('HrhrOWrVLj8Pk_4_X');
   }, []);
 
-  const handleOpenArticle = (articleId: number) => {
-    setSelectedArticleId(articleId);
-  };
-
-  const handleCloseArticle = () => {
-    setSelectedArticleId(null);
-  };
-
   return (
-    <div className="min-h-screen bg-white text-brand-dark selection:bg-brand-orange selection:text-white">
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        {/* <Portfolio onViewAll={() => setIsPortfolioOpen(true)} /> */}
-        <Pricing />
-        {/* <Testimonials /> */}
-        <Blog onOpenArticle={handleOpenArticle} />
-        <SEODiagnostic />
-        <Contact />
-      </main>
-      <Footer onOpenLegal={() => setIsLegalOpen(true)} />
-      <CookieBanner />
-      <Legal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />
-      {/* <PortfolioPage isOpen={isPortfolioOpen} onClose={() => setIsPortfolioOpen(false)} /> */}
-      <BlogArticle articleId={selectedArticleId} onClose={handleCloseArticle} />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white text-brand-dark selection:bg-brand-orange selection:text-white">
+        <CustomCursor />
+        <Header />
+        <main>
+          <AnimatedRoutes />
+        </main>
+        <Footer onOpenLegal={() => setIsLegalOpen(true)} />
+        <CookieBanner />
+        <Legal isOpen={isLegalOpen} onClose={() => setIsLegalOpen(false)} />
+      </div>
+    </Router>
   );
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
-import { MousePointerClick, Share2, Printer, PenTool, Layout, BarChart, CheckCircle2 } from 'lucide-react';
+import { MousePointerClick, Share2, Printer, PenTool, Layout, BarChart, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
 import { LINKS } from '../constants';
 import { motion, Variants } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -66,75 +67,75 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
-        >
-          <h2 className="text-xs md:text-sm font-bold uppercase tracking-wider mb-2" style={{color: '#FF4500'}}>Nos Expertises</h2>
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4" style={{color: '#1A1A1A'}}>Une approche 360° pour votre croissance</h3>
-          <p className="text-sm md:text-base" style={{color: '#4A4A4A'}}>
-            Nous combinons créativité et data pour déployer des stratégies omnicanales qui convertissent.
+    <section id="services" className="py-24" style={{backgroundColor: '#FFFFFF'}}>
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6" style={{backgroundColor: '#FFF4F0', borderColor: '#FFD6CC', color: '#FF4500'}}>
+            <span className="font-semibold text-sm tracking-wide uppercase">Nos Expertises</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6" style={{color: '#1A1A1A'}}>
+            Une approche <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-[#FF6B35]">360°</span> pour votre croissance
+          </h2>
+          <p className="text-xl leading-relaxed" style={{color: '#6B6B6B'}}>
+            Nous combinons créativité et data pour déployer des stratégies d'acquisition performantes.
           </p>
-        </motion.div>
+        </div>
 
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {services.map((service, index) => (
             <motion.div 
-              key={index} 
+              key={index}
               variants={itemVariants}
-              whileHover={{ y: -8, transition: { type: "spring", stiffness: 300 } }}
-              className="p-6 md:p-8 rounded-2xl bg-white shadow-sm hover:shadow-xl transition-shadow duration-300"
-              style={{borderWidth: '1px', borderColor: '#EFEEEE'}}
+              whileHover={{ y: -10 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="rounded-2xl p-8 relative overflow-hidden group shadow-lg shadow-gray-100 hover:shadow-xl transition-shadow"
+              style={{backgroundColor: '#FFFFFF', borderWidth: '1px', borderColor: '#EFEEEE'}}
             >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6" style={{backgroundColor: service.color}}>
-                <service.icon size={24} className="md:w-7 md:h-7" style={{color: service.iconColor}} />
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+                style={{backgroundColor: service.color, color: service.iconColor}}
+              >
+                <service.icon size={32} strokeWidth={1.5} />
               </div>
-              <h4 className="text-lg md:text-xl font-bold mb-2 md:mb-3" style={{color: '#1A1A1A'}}>{service.title}</h4>
-              <p className="mb-5 md:mb-6 text-xs md:text-sm leading-relaxed" style={{color: '#4A4A4A'}}>
-                {service.description}
-              </p>
-              <ul className="space-y-2">
+              
+              <h3 className="text-2xl font-bold mb-4" style={{color: '#1A1A1A'}}>{service.title}</h3>
+              <p className="mb-6" style={{color: '#6B6B6B'}}>{service.description}</p>
+              
+              <ul className="space-y-3 mb-8">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-xs md:text-sm" style={{color: '#6B6B6B'}}>
-                    <CheckCircle2 size={16} className="shrink-0 mt-0.5" style={{color: '#FF4500'}} />
-                    <span className="leading-relaxed">{feature}</span>
+                  <li key={idx} className="flex items-center gap-3 text-sm font-medium" style={{color: '#4A4A4A'}}>
+                    <CheckCircle2 size={16} style={{color: '#FF4500'}} className="flex-shrink-0" />
+                    {feature}
                   </li>
                 ))}
               </ul>
+
+              <div className="absolute top-0 right-0 p-8 opacity-5">
+                <service.icon size={120} strokeWidth={1} />
+              </div>
             </motion.div>
           ))}
           
-          {/* Call to Action Card */}
           <motion.div 
             variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 400, damping: 25 }}
-            className="p-6 md:p-8 rounded-2xl text-white flex flex-col justify-center items-center text-center" style={{backgroundColor: '#1A1A1A'}}
+            className="rounded-2xl p-8 relative overflow-hidden group shadow-lg shadow-gray-100 transition-shadow flex flex-col items-center justify-center text-center"
+            style={{backgroundColor: '#FF4500', color: '#FFFFFF'}}
           >
-            <BarChart size={40} className="md:w-12 md:h-12 mb-5 md:mb-6" style={{color: '#FF4500'}} />
-            <h4 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Besoin d'une stratégie sur-mesure ?</h4>
-            <p className="mb-6 md:mb-8 text-xs md:text-sm leading-relaxed" style={{color: '#B0B0B0'}}>
-              Discutons de vos objectifs et construisons ensemble votre plan d'action.
-            </p>
-            <Button href={LINKS.booking} variant="primary" className="w-full py-3.5">
-              Réserver un Audit
-            </Button>
+            <h3 className="text-2xl font-bold mb-4">Voir l'expérience complète</h3>
+            <p className="mb-8 opacity-90">Découvrez comment nous travaillons en détail et l'impact de nos stratégies.</p>
+            <Link to="/services" className="inline-flex items-center gap-2 bg-white text-[#FF4500] px-6 py-3 rounded-xl font-bold hover:bg-[#FFF4F0] transition-colors" data-cursor="hover">
+              Explorer nos services <ArrowRight size={20} />
+            </Link>
           </motion.div>
+
         </motion.div>
       </div>
     </section>
   );
 };
-

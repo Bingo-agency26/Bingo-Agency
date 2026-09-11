@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { IMAGES, LINKS } from '../constants';
 import { Button } from './Button';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,35 +21,38 @@ export const Header: React.FC = () => {
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
     } else {
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
     }
     return () => {
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
     };
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Tarifs', href: '#pricing' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Services', href: 'services' },
+    { name: 'Portfolio', href: 'portfolio' },
+    { name: 'Tarifs', href: 'pricing' },
+    { name: 'Blog', href: 'blog' },
+    { name: 'Contact', href: 'contact' },
   ];
 
-  const handleLinkClick = () => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
     setIsMobileMenuOpen(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/#' + href);
+    } else {
+      const element = document.getElementById(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
     <>
-      {/* Header Bar */}
       <header 
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 backdrop-blur-md shadow-sm ${
           isScrolled ? 'py-4' : 'py-6'
@@ -54,11 +60,11 @@ export const Header: React.FC = () => {
         style={{backgroundColor: 'rgba(255, 255, 255, 0.95)'}}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
-          {/* Logo */}
-          <a 
-            href="#" 
+          <Link 
+            to="/" 
             className="relative z-[110] flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(false)}
+            data-cursor="hover"
           >
             <img 
               src={IMAGES.logoHeader} 
@@ -66,16 +72,16 @@ export const Header: React.FC = () => {
               width="190"
               height="70"
               className="h-10 md:h-12 w-auto object-contain"
-              {...({'fetchpriority': 'high'} as React.ImgHTMLAttributes<HTMLImageElement>)}
             />
-          </a>
+          </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name}
-                href={link.href}
+                href={`#${link.href}`}
+                onClick={(e) => handleNavClick(e, link.href)}
+                data-cursor="hover"
                 className="font-medium text-sm uppercase tracking-wide transition-colors"
                 style={{color: '#1A1A1A'}}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'}
@@ -86,7 +92,6 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Right Side Actions */}
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
               <Button 
@@ -102,7 +107,7 @@ export const Header: React.FC = () => {
               className="md:hidden relative z-[110] p-2 -mr-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               style={{color: isMobileMenuOpen ? '#FF4500' : '#1A1A1A'}}
-              aria-label="Toggle menu"
+              data-cursor="hover"
             >
               {isMobileMenuOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
             </button>
@@ -110,7 +115,6 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
           className="fixed inset-0 z-[90] md:hidden"
@@ -119,7 +123,6 @@ export const Header: React.FC = () => {
         />
       )}
 
-      {/* Mobile Menu Content */}
       <div 
         className={`fixed top-0 right-0 bottom-0 w-full max-w-sm z-[95] md:hidden transition-transform duration-300 ease-out ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -131,22 +134,12 @@ export const Header: React.FC = () => {
             {navLinks.map((link, index) => (
               <a 
                 key={link.name}
-                href={link.href}
-                onClick={handleLinkClick}
+                href={`#${link.href}`}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="py-4 px-4 text-xl font-bold rounded-xl transition-all duration-200"
                 style={{
                   color: '#1A1A1A',
                   animationDelay: `${index * 50}ms`
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FFF4F0';
-                  e.currentTarget.style.color = '#FF4500';
-                  e.currentTarget.style.transform = 'translateX(8px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#1A1A1A';
-                  e.currentTarget.style.transform = 'translateX(0)';
                 }}
               >
                 {link.name}
@@ -159,7 +152,6 @@ export const Header: React.FC = () => {
               href={LINKS.booking} 
               variant="primary" 
               className="w-full justify-center !py-4 !text-base"
-              onClick={handleLinkClick}
             >
               Réserver un Audit Gratuit
             </Button>

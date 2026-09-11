@@ -36,12 +36,14 @@ export const Button: React.FC<ButtonProps> = ({
   );
 
   if (href) {
+    const isInternal = href.startsWith('#') || href.startsWith('/');
     return (
       <a 
         href={href} 
-        target="_blank" 
-        rel="noopener noreferrer"
+        target={isInternal ? undefined : "_blank"}
+        rel={isInternal ? undefined : "noopener noreferrer"}
         className={`${baseStyles} ${variants[variant]} ${widthClass} ${className}`}
+        data-cursor="hover"
       >
         {content}
       </a>
@@ -51,6 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button 
       className={`${baseStyles} ${variants[variant]} ${widthClass} ${className}`}
+      data-cursor="hover"
       {...props}
     >
       {content}
