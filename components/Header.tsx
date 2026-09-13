@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { IMAGES, LINKS } from '../constants';
 import { Button } from './Button';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,34 +29,18 @@ export const Header: React.FC = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Services', href: 'services' },
-    { name: 'Portfolio', href: 'portfolio' },
-    { name: 'Tarifs', href: 'pricing' },
-    { name: 'Blog', href: 'blog' },
-    { name: 'Contact', href: 'contact' },
+    { name: 'Services', href: '/services' },
+    { name: 'Tarifs', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    
-    if (location.pathname !== '/') {
-      navigate('/#' + href);
-    } else {
-      const element = document.getElementById(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
 
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 backdrop-blur-md shadow-sm ${
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 shadow-sm bg-white ${
           isScrolled ? 'py-4' : 'py-6'
         }`}
-        style={{backgroundColor: 'rgba(255, 255, 255, 0.95)'}}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <Link 
@@ -76,17 +59,16 @@ export const Header: React.FC = () => {
 
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name}
-                href={`#${link.href}`}
-                onClick={(e) => handleNavClick(e, link.href)}
+                to={link.href}
                 className="font-medium text-sm uppercase tracking-wide transition-colors"
                 style={{color: '#1A1A1A'}}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#1A1A1A'}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -129,10 +111,10 @@ export const Header: React.FC = () => {
         <div className="h-full flex flex-col pt-24 pb-8 px-6">
           <nav className="flex-1 flex flex-col gap-1">
             {navLinks.map((link, index) => (
-              <a 
+              <Link 
                 key={link.name}
-                href={`#${link.href}`}
-                onClick={(e) => handleNavClick(e, link.href)}
+                to={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className="py-4 px-4 text-xl font-bold rounded-xl transition-all duration-200"
                 style={{
                   color: '#1A1A1A',
@@ -140,7 +122,7 @@ export const Header: React.FC = () => {
                 }}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 

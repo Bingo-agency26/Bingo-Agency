@@ -105,3 +105,4 @@ export const PricingPage: React.FC = () => {
     </motion.div>
   );
 };
+

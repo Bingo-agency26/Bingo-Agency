@@ -52,3 +52,4 @@ export const BlogPage: React.FC = () => {
     </motion.div>
   );
 };
+
