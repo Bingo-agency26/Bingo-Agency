@@ -4,9 +4,11 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { CookieBanner } from './components/CookieBanner';
 import { Legal } from './components/Legal';
-import { CustomCursor } from './components/CustomCursor';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
+import { PricingPage } from './pages/PricingPage';
+import { BlogPage } from './pages/BlogPage';
+import { ContactPage } from './pages/ContactPage';
 import { AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
@@ -18,6 +20,9 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </AnimatePresence>
   );
@@ -42,7 +47,6 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="min-h-screen bg-white text-brand-dark selection:bg-brand-orange selection:text-white">
-        <CustomCursor />
         <Header />
         <main>
           <AnimatedRoutes />

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
 import { PRICING, LINKS } from '../constants';
+import { Link } from 'react-router-dom';
 
 export const Pricing: React.FC = () => {
   return (
@@ -60,6 +61,12 @@ export const Pricing: React.FC = () => {
               </Button>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <Link to="/pricing" className="inline-flex items-center gap-2 px-8 py-4 bg-[#FF4500] text-white rounded-full font-bold hover:bg-[#E63E00] transition-colors shadow-lg shadow-[#FF4500]/30 hover:-translate-y-1 transform duration-300">
+            Explorer les tarifs en détail <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </section>

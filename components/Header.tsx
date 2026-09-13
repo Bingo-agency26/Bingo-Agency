@@ -64,7 +64,6 @@ export const Header: React.FC = () => {
             to="/" 
             className="relative z-[110] flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(false)}
-            data-cursor="hover"
           >
             <img 
               src={IMAGES.logoHeader} 
@@ -81,7 +80,6 @@ export const Header: React.FC = () => {
                 key={link.name}
                 href={`#${link.href}`}
                 onClick={(e) => handleNavClick(e, link.href)}
-                data-cursor="hover"
                 className="font-medium text-sm uppercase tracking-wide transition-colors"
                 style={{color: '#1A1A1A'}}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'}
@@ -107,7 +105,6 @@ export const Header: React.FC = () => {
               className="md:hidden relative z-[110] p-2 -mr-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               style={{color: isMobileMenuOpen ? '#FF4500' : '#1A1A1A'}}
-              data-cursor="hover"
             >
               {isMobileMenuOpen ? <X size={28} strokeWidth={2.5} /> : <Menu size={28} strokeWidth={2.5} />}
             </button>

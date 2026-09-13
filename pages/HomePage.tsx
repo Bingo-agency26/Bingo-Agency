@@ -39,3 +39,4 @@ export const HomePage: React.FC = () => {
     </motion.div>
   );
 };
+

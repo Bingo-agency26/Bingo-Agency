@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BLOG_POSTS } from '../constants';
+import { Link } from 'react-router-dom';
 
 interface BlogProps {
   onOpenArticle: (articleId: number) => void;
@@ -118,6 +119,12 @@ export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
               />
             ))}
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <Link to="/blog" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#1A1A1A] text-[#1A1A1A] rounded-full font-bold hover:bg-[#1A1A1A] hover:text-white transition-colors shadow-lg hover:-translate-y-1 transform duration-300">
+            Explorer tous nos articles <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </section>

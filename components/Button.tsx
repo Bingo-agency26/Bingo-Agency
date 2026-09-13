@@ -43,7 +43,6 @@ export const Button: React.FC<ButtonProps> = ({
         target={isInternal ? undefined : "_blank"}
         rel={isInternal ? undefined : "noopener noreferrer"}
         className={`${baseStyles} ${variants[variant]} ${widthClass} ${className}`}
-        data-cursor="hover"
       >
         {content}
       </a>
@@ -53,7 +52,6 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button 
       className={`${baseStyles} ${variants[variant]} ${widthClass} ${className}`}
-      data-cursor="hover"
       {...props}
     >
       {content}
