@@ -9,6 +9,7 @@ import { ServicesPage } from './pages/ServicesPage';
 import { PricingPage } from './pages/PricingPage';
 import { BlogPage } from './pages/BlogPage';
 import { ContactPage } from './pages/ContactPage';
+import { AdminPage } from './pages/AdminPage';
 import { AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
@@ -23,6 +24,7 @@ const AnimatedRoutes = () => {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </AnimatePresence>
   );
