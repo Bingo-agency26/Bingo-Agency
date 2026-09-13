@@ -29,7 +29,7 @@ export const IMAGES = {
 export const STATS = [
   { label: "Approche", value: "360°", suffix: " Globale" },
   { label: "Stratégie", value: "100%", suffix: " Sur-mesure" },
-  { label: "Accompagnement", value: "Pro", suffix: " Actif" },
+  { label: "Suivi", value: "Pro", suffix: " Actif" },
   { label: "Créativité", value: "∞", suffix: " Sans limite" }
 ];
 
