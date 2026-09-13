@@ -1,7 +1,6 @@
 import React from 'react';
 import { LINKS, IMAGES } from '../constants';
 import { Facebook, Linkedin, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 interface FooterProps {
   onOpenLegal: () => void;
@@ -95,9 +94,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
         </div>
 
         <div className="text-center text-xs pt-8" style={{color: '#A0A0A0'}}>
-          <p>
-            © <Link to="/admin" className="cursor-default">{currentYear}</Link> Bingo Agency. Tous droits réservés.
-          </p>
+          <p>© {currentYear} Bingo Agency. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
