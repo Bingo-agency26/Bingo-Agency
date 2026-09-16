@@ -18,7 +18,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
             <img 
               src={IMAGES.logoFooter}
               alt="Bingo Agency" 
-              className="w-40 mb-4 object-contain"
+              width={160}
+              height={56}
+              className="w-40 h-auto mb-4 object-contain"
             />
             <p className="text-sm leading-relaxed" style={{color: '#E0E0E0'}}>
               Social Media Marketing Agency à Toulouse.
@@ -36,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               className="p-3 rounded-full transition-all" 
               style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}
               aria-label="Facebook Bingo Agency"
-              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}}
+              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#D33600'; e.currentTarget.style.color = 'white';}}
               onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}
             >
               <Facebook size={20} />
@@ -48,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               className="p-3 rounded-full transition-all" 
               style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}
               aria-label="LinkedIn Bingo Agency"
-              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}}
+              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#D33600'; e.currentTarget.style.color = 'white';}}
               onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}
             >
               <Linkedin size={20} />
@@ -60,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
               className="p-3 rounded-full transition-all" 
               style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}
               aria-label="Instagram Bingo Agency"
-              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#FF4500'; e.currentTarget.style.color = 'white';}}
+              onMouseEnter={(e) => {e.currentTarget.style.backgroundColor = '#D33600'; e.currentTarget.style.color = 'white';}}
               onMouseLeave={(e) => {e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.color = 'white';}}
             >
               <Instagram size={20} />
@@ -72,28 +74,28 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
           <div>
              <h4 className="font-bold mb-4 text-white">Contact</h4>
              <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
-               <li><a href={`mailto:${LINKS.email}`} className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>{LINKS.email}</a></li>
+               <li><a href={`mailto:${LINKS.email}`} className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#D33600'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>{LINKS.email}</a></li>
                <li>Toulouse, France</li>
              </ul>
           </div>
           <div>
             <h4 className="font-bold mb-4 text-white">Navigation</h4>
             <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
-              <li><a href="#services" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Services</a></li>
-              <li><a href="#portfolio" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Réalisations</a></li>
-              <li><a href="#pricing" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Tarifs</a></li>
+              <li><a href="#services" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#D33600'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Services</a></li>
+              <li><a href="#portfolio" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#D33600'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Réalisations</a></li>
+              <li><a href="#pricing" className="transition-colors" onMouseEnter={(e) => e.currentTarget.style.color = '#D33600'} onMouseLeave={(e) => e.currentTarget.style.color = '#E0E0E0'}>Tarifs</a></li>
             </ul>
           </div>
           <div>
              <h4 className="font-bold mb-4 text-white">Légal</h4>
              <ul className="space-y-2 text-sm" style={{color: '#E0E0E0'}}>
                 <li>
-                  <button onClick={onOpenLegal} className="hover:text-[#FF4500] transition-colors">
+                  <button onClick={onOpenLegal} className="hover:text-[#D33600] transition-colors">
                     Mentions Légales
                   </button>
                 </li>
                 <li>
-                  <button onClick={onOpenLegal} className="hover:text-[#FF4500] transition-colors">
+                  <button onClick={onOpenLegal} className="hover:text-[#D33600] transition-colors">
                     Politique de Confidentialité
                   </button>
                 </li>
