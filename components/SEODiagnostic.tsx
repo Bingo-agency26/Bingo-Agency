@@ -24,15 +24,9 @@ export const SEODiagnostic: React.FC = () => {
     setIsAnalyzing(true);
     setShowCTA(false);
 
-    // After 2 seconds, open Google search and show CTA
+    // After 2 seconds, show simulated results CTA
     setTimeout(() => {
-      const searchQuery = `${cleanActivity}+${cleanCity}`;
-      const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-      
-      // Open Google search in new tab
-      window.open(googleUrl, '_blank');
-      
-      // Stop analyzing, show CTA
+      // Stop analyzing, show CTA directly in page
       setIsAnalyzing(false);
       setShowCTA(true);
     }, 2000);
@@ -157,61 +151,79 @@ export const SEODiagnostic: React.FC = () => {
                 </button>
               )}
 
-              {/* CTA After Analysis */}
+              {/* CTA After Analysis (Simulated Results) */}
               {showCTA && (
-                <div className="space-y-4 animate-fade-in">
-                  <div className="p-6 rounded-xl" style={{backgroundColor: '#FFF4F0', borderWidth: '2px', borderColor: '#FF4500'}}>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0" style={{backgroundColor: '#FF4500'}}>
-                        <ExternalLink size={24} style={{color: 'white'}} />
+                <div className="space-y-6 animate-fade-in">
+                  <div className="bg-gray-50 border border-gray-200 p-6 rounded-xl relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-[#FF4500]"></div>
+                    
+                    <h3 className="text-lg font-bold mb-4 flex items-center gap-2 text-gray-800">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#FF4500]"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                      Résultats locaux : Top 3 Google Maps
+                    </h3>
+                    
+                    <div className="space-y-3 mb-6">
+                      {/* Fake Competitor 1 */}
+                      <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center justify-between">
+                        <div>
+                          <p className="font-bold text-blue-800 text-lg">{activity.charAt(0).toUpperCase() + activity.slice(1)} Pro {city}</p>
+                          <p className="text-sm text-gray-600 flex items-center gap-1 mt-1">
+                            <span className="text-yellow-500">★★★★★</span> 4.9 (128 avis)
+                          </p>
+                        </div>
+                        <div className="text-xs font-bold text-gray-400 uppercase">#1</div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg md:text-xl font-bold mb-2" style={{color: '#1A1A1A'}}>
-                          Vous n'êtes pas dans le Top 3 ?
-                        </h3>
-                        <p className="text-sm mb-4" style={{color: '#4A4A4A'}}>
-                          <strong>87% des clics</strong> vont aux 3 premiers résultats Google Maps. Si vous n'y êtes pas, vous perdez des clients chaque jour.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          <Button 
-                            href={LINKS.booking} 
-                            variant="primary"
-                            className="!py-3 !text-base flex-1 justify-center"
-                          >
-                            Booster mon classement →
-                          </Button>
-                          <button
-                            onClick={() => setShowCTA(false)}
-                            className="px-6 py-3 rounded-lg font-semibold text-sm transition-colors"
-                            style={{color: '#FF4500', borderWidth: '2px', borderColor: '#FF4500', backgroundColor: 'white'}}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#FF4500';
-                              e.currentTarget.style.color = 'white';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = 'white';
-                              e.currentTarget.style.color = '#FF4500';
-                            }}
-                          >
-                            Nouveau test
-                          </button>
+                      
+                      {/* Fake Competitor 2 */}
+                      <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center justify-between">
+                        <div>
+                          <p className="font-bold text-blue-800 text-lg">Expert {activity} {city}</p>
+                          <p className="text-sm text-gray-600 flex items-center gap-1 mt-1">
+                            <span className="text-yellow-500">★★★★☆</span> 4.7 (95 avis)
+                          </p>
+                        </div>
+                        <div className="text-xs font-bold text-gray-400 uppercase">#2</div>
+                      </div>
+                      
+                      {/* Fake Competitor 3 */}
+                      <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm flex items-center justify-between">
+                        <div>
+                          <p className="font-bold text-blue-800 text-lg">{city} {activity} Services</p>
+                          <p className="text-sm text-gray-600 flex items-center gap-1 mt-1">
+                            <span className="text-yellow-500">★★★★☆</span> 4.6 (62 avis)
+                          </p>
+                        </div>
+                        <div className="text-xs font-bold text-gray-400 uppercase">#3</div>
+                      </div>
+                    </div>
+
+                    <div className="bg-[#FFF4F0] border-2 border-[#FF4500] p-5 rounded-xl">
+                      <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-[#FF4500] text-white">
+                          <TrendingUp size={24} />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-lg font-bold text-[#1A1A1A] mb-1">Votre entreprise n'est pas dans ce Top 3 ?</h4>
+                          <p className="text-sm text-gray-700">
+                            <strong>87% des clients potentiels</strong> choisissent l'un de ces 3 concurrents. Laissez Bingo Agency vous propulser à leur place.
+                          </p>
                         </div>
                       </div>
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-3 gap-4 text-center">
-                    <div className="p-4 rounded-lg" style={{backgroundColor: '#EFEEEE'}}>
-                      <p className="text-2xl font-bold mb-1" style={{color: '#FF4500'}}>+40%</p>
-                      <p className="text-xs" style={{color: '#6B6B6B'}}>Visibilité locale moyenne</p>
-                    </div>
-                    <div className="p-4 rounded-lg" style={{backgroundColor: '#EFEEEE'}}>
-                      <p className="text-2xl font-bold mb-1" style={{color: '#FF4500'}}>30 jours</p>
-                      <p className="text-xs" style={{color: '#6B6B6B'}}>Premiers résultats SEO</p>
-                    </div>
-                    <div className="p-4 rounded-lg" style={{backgroundColor: '#EFEEEE'}}>
-                      <p className="text-2xl font-bold mb-1" style={{color: '#FF4500'}}>Top 3</p>
-                      <p className="text-xs" style={{color: '#6B6B6B'}}>Objectif garanti</p>
+                      <div className="mt-5 flex flex-col sm:flex-row gap-3">
+                        <Button 
+                          href={LINKS.booking} 
+                          variant="primary"
+                          className="!py-3 !text-base flex-1 justify-center"
+                        >
+                          Prendre leur place (Audit Offert) →
+                        </Button>
+                        <button
+                          onClick={() => setShowCTA(false)}
+                          className="px-6 py-3 rounded-lg font-semibold text-sm transition-colors border-2 border-[#FF4500] text-[#FF4500] bg-white hover:bg-[#FF4500] hover:text-white"
+                        >
+                          Refaire un test
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
