@@ -26,8 +26,12 @@ export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
         // Sort fetched articles by date (newest first)
         fetchedArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
         
+        // Filter out hardcoded posts that have been imported (matching by title)
+        const fetchedTitles = fetchedArticles.map(a => a.title);
+        const uniqueHardcodedPosts = BLOG_POSTS.filter(post => !fetchedTitles.includes(post.title));
+        
         // Merge with constants (fetched articles first)
-        setArticles([...fetchedArticles, ...BLOG_POSTS]);
+        setArticles([...fetchedArticles, ...uniqueHardcodedPosts]);
       } catch (error) {
         console.error("Erreur de récupération Firestore:", error);
       }
