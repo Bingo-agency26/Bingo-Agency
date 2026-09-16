@@ -1,16 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BLOG_POSTS } from '../constants';
 import { Link } from 'react-router-dom';
+import { db } from '../firebase';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
 interface BlogProps {
-  onOpenArticle: (articleId: number) => void;
+  onOpenArticle: (articleId: number | string) => void;
 }
 
 export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [articles, setArticles] = useState<any[]>(BLOG_POSTS);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const q = query(collection(db, 'articles'));
+        const querySnapshot = await getDocs(q);
+        const fetchedArticles = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...(doc.data() as any)
+        }));
+        
+        // Sort fetched articles by date (newest first)
+        fetchedArticles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+        
+        // Merge with constants (fetched articles first)
+        setArticles([...fetchedArticles, ...BLOG_POSTS]);
+      } catch (error) {
+        console.error("Erreur de récupération Firestore:", error);
+      }
+    };
+    fetchArticles();
+  }, []);
+
   const articlesPerSlide = 3;
-  const totalSlides = Math.ceil(BLOG_POSTS.length / articlesPerSlide);
+  const totalSlides = Math.ceil(articles.length / articlesPerSlide);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -20,7 +46,7 @@ export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
-  const visibleArticles = BLOG_POSTS.slice(
+  const visibleArticles = articles.slice(
     currentSlide * articlesPerSlide,
     (currentSlide + 1) * articlesPerSlide
   );

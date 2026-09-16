@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Save, AlertCircle, CheckCircle, Lock } from 'lucide-react';
+import { ArrowLeft, Save, AlertCircle, CheckCircle, Lock, Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 interface ArticleForm {
   title: string;
@@ -16,6 +18,7 @@ interface ArticleForm {
 export const AdminPage: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
+  const [isPublishing, setIsPublishing] = useState(false);
   
   const [form, setForm] = useState<ArticleForm>({
     title: '',
@@ -67,19 +70,34 @@ export const AdminPage: React.FC = () => {
     setSeoScore(score);
   }, [form]);
 
-  const handleSave = () => {
-    // For now, we save to localStorage to prove it works
-    // Next step: Connect to a real database like Firebase
-    const newArticle = {
-      ...form,
-      id: Date.now(),
-      date: new Date().toISOString().split('T')[0],
-      readTime: Math.ceil(form.content.length / 1000) + ' min',
-    };
-    
-    const existing = JSON.parse(localStorage.getItem('bingo_articles') || '[]');
-    localStorage.setItem('bingo_articles', JSON.stringify([newArticle, ...existing]));
-    alert('Article sauvegardé en local ! Il faut brancher la base de données pour le mettre en ligne publiquement.');
+  const handleSave = async () => {
+    if (!form.title || !form.content) {
+      alert("Le titre et le contenu sont obligatoires.");
+      return;
+    }
+
+    setIsPublishing(true);
+    try {
+      const newArticle = {
+        ...form,
+        date: new Date().toISOString(),
+        readTime: Math.max(1, Math.ceil(form.content.length / 1000)) + ' min',
+        // Fallback image if none provided
+        image: form.image || "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?auto=format&fit=crop&q=80&w=800",
+      };
+      
+      await addDoc(collection(db, 'articles'), newArticle);
+      
+      alert('Article publié avec succès en direct !');
+      setForm({
+        title: '', slug: '', category: 'SEO', image: '', excerpt: '', content: '', keyword: ''
+      });
+    } catch (error) {
+      console.error("Erreur lors de la publication :", error);
+      alert("Erreur lors de la publication. Assurez-vous d'avoir configuré les règles Firestore.");
+    } finally {
+      setIsPublishing(false);
+    }
   };
 
   if (!isAuthenticated) {
@@ -113,8 +131,13 @@ export const AdminPage: React.FC = () => {
             <ArrowLeft size={20} /> Retour au site
           </Link>
           <h1 className="text-3xl font-black">Dashboard SEO</h1>
-          <button onClick={handleSave} className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-neutral-800 transition-colors">
-            <Save size={20} /> Publier l'article
+          <button 
+            onClick={handleSave} 
+            disabled={isPublishing}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-full font-bold hover:bg-neutral-800 transition-colors disabled:opacity-50"
+          >
+            {isPublishing ? <Loader size={20} className="animate-spin" /> : <Save size={20} />} 
+            {isPublishing ? "Publication..." : "Publier l'article"}
           </button>
         </div>
 
