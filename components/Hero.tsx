@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center pt-28 md:pt-32 pb-20 overflow-hidden" style={{backgroundColor: '#F9F7F2'}}>
       {/* Background Image with Overlay */}
       <motion.div 
-        initial={{ opacity: 0, scale: 1.05 }}
+        initial={{ opacity: 1, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0 z-0"
@@ -37,6 +37,7 @@ export const Hero: React.FC = () => {
         <img 
           src={IMAGES.heroBg} 
           alt="Office Background" 
+          fetchPriority="high"
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#F9F7F2] via-[#F9F7F2]/90 to-transparent"></div>
@@ -50,20 +51,20 @@ export const Hero: React.FC = () => {
           animate="visible"
           className="max-w-3xl"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6" style={{backgroundColor: '#FFEBE5', borderColor: '#FF4500', color: '#FF4500'}}>
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-6" style={{backgroundColor: '#FFEBE5', borderColor: '#D33600', color: '#D33600'}}>
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{backgroundColor: '#FF4500'}}></span>
-              <span className="relative inline-flex rounded-full h-3 w-3" style={{backgroundColor: '#FF4500'}}></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{backgroundColor: '#D33600'}}></span>
+              <span className="relative inline-flex rounded-full h-3 w-3" style={{backgroundColor: '#D33600'}}></span>
             </span>
             <span className="font-semibold text-xs md:text-sm">Social Media Marketing Agency à Toulouse</span>
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6" style={{color: '#1A1A1A'}}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6" style={{color: '#1A1A1A'}}>
             Propulsez votre <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-[#FF6B35]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D33600] to-[#FF6B35]">
               Business
             </span> vers de nouveaux sommets.
-          </motion.h1>
+          </h1>
           
           <motion.p variants={itemVariants} className="text-lg md:text-xl mb-8 leading-relaxed max-w-xl" style={{color: '#4A4A4A'}}>
             De la stratégie digitale à l'identité visuelle, nous transformons votre communication en levier de croissance. Publicité, Social Media, Print & Branding.
@@ -88,8 +89,8 @@ export const Hero: React.FC = () => {
                 className="bg-white p-3 md:p-4 rounded-xl shadow-sm" 
                 style={{borderWidth: '1px', borderColor: '#EFEEEE'}}
               >
-                <p className="text-2xl md:text-3xl font-bold" style={{color: '#FF4500'}}>{stat.value}</p>
-                <p className="text-[10px] md:text-xs font-medium uppercase tracking-wide mt-1 leading-tight" style={{color: '#6B6B6B'}}>{stat.label} <span style={{color: '#9B9B9B'}} className="normal-case">{stat.suffix}</span></p>
+                <p className="text-2xl md:text-3xl font-bold" style={{color: '#D33600'}}>{stat.value}</p>
+                <p className="text-[10px] md:text-xs font-medium uppercase tracking-wide mt-1 leading-tight" style={{color: '#6B6B6B'}}>{stat.label} <span style={{color: '#6B6B6B'}} className="normal-case">{stat.suffix}</span></p>
               </motion.div>
             ))}
           </motion.div>
@@ -145,7 +146,7 @@ export const Hero: React.FC = () => {
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             className="w-1 h-2 rounded-full" 
-            style={{backgroundColor: '#FF4500'}}
+            style={{backgroundColor: '#D33600'}}
           ></motion.div>
         </div>
       </motion.div>
