@@ -85,6 +85,7 @@ export const Header: React.FC = () => {
 
             <button 
               className="md:hidden relative z-[110] p-2 -mr-2"
+              aria-label="Menu principal"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               style={{color: isMobileMenuOpen ? '#FF4500' : '#1A1A1A'}}
             >

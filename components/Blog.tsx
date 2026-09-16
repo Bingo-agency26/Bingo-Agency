@@ -140,13 +140,17 @@ export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all ${
-                  index === currentSlide
-                    ? 'w-8 bg-brand-orange'
-                    : 'w-2 bg-gray-300 hover:bg-gray-400'
-                }`}
+                className="p-3 focus:outline-none"
                 aria-label={`Aller à la page ${index + 1}`}
-              />
+              >
+                <div 
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentSlide
+                      ? 'w-8 bg-[#FF4500]'
+                      : 'w-2 bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>
