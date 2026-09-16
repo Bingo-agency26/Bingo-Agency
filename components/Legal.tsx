@@ -31,7 +31,7 @@ export const Legal: React.FC<LegalProps> = ({ isOpen, onClose }) => {
                 <br /><br />
                 <strong>Hamza Abdelhaq</strong> agissant sous le nom commercial <strong>BINGO AGENCY</strong><br />
                 Statut : Auto-entrepreneur (Entreprise Individuelle)<br />
-                SIRET : En cours d'immatriculation<br />
+                SIRET : 106 001 142 00012<br />
                 Siège social : Toulouse, France<br />
                 Email : contact@bingo-agency.fr<br />
                 Directeur de la publication : Hamza Abdelhaq
