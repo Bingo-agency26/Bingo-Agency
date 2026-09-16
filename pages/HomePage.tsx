@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { Hero } from '../components/Hero';
 import { Services } from '../components/Services';
-import { Portfolio } from '../components/Portfolio';
 import { Pricing } from '../components/Pricing';
-import { Testimonials } from '../components/Testimonials';
-import { Blog } from '../components/Blog';
 import { SEODiagnostic } from '../components/SEODiagnostic';
-import { Contact } from '../components/Contact';
 import { BlogArticle } from '../components/BlogArticle';
 import { motion } from 'framer-motion';
+
+const Blog = lazy(() => import('../components/Blog').then(m => ({ default: m.Blog })));
+const Contact = lazy(() => import('../components/Contact').then(m => ({ default: m.Contact })));
 
 export const HomePage: React.FC = () => {
   const [selectedArticle, setSelectedArticle] = useState<any | null>(null);
@@ -32,9 +31,13 @@ export const HomePage: React.FC = () => {
       <Hero />
       <Services />
       <Pricing />
-      <Blog onOpenArticle={handleOpenArticle} />
+      <Suspense fallback={<div className="h-64 flex items-center justify-center">Chargement...</div>}>
+        <Blog onOpenArticle={handleOpenArticle} />
+      </Suspense>
       <SEODiagnostic />
-      <Contact />
+      <Suspense fallback={<div className="h-64 flex items-center justify-center">Chargement...</div>}>
+        <Contact />
+      </Suspense>
       <BlogArticle article={selectedArticle} onClose={handleCloseArticle} />
     </motion.div>
   );

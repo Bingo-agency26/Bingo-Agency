@@ -16,6 +16,7 @@ export const Contact: React.FC = () => {
     const form = e.currentTarget;
 
     try {
+      emailjs.init('HrhrOWrVLj8Pk_4_X');
       await emailjs.sendForm(
         'service_6npek0d',
         'template_d3dbevc',
@@ -40,7 +41,7 @@ export const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
           
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider mb-2" style={{color: '#FF4500'}}>Contact</h2>
+            <h2 className="text-sm font-bold uppercase tracking-wider mb-2" style={{color: '#D33600'}}>Contact</h2>
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6" style={{color: '#1A1A1A'}}>Parlons de votre projet</h3>
             <p className="mb-6 md:mb-8 leading-relaxed" style={{color: '#4A4A4A'}}>
               Vous avez un projet en tête ? Remplissez le formulaire ou contactez-nous directement.
@@ -48,23 +49,23 @@ export const Contact: React.FC = () => {
 
             <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
               <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0" style={{color: '#FF4500'}}>
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0" style={{color: '#D33600'}}>
                   <MapPin size={20} className="md:w-6 md:h-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm md:text-base" style={{color: '#1A1A1A'}}>Notre Agence</h4>
                   <p className="text-sm" style={{color: '#4A4A4A'}}>Toulouse, France</p>
-                  <a href={LINKS.map} target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm hover:underline" style={{color: '#FF4500'}}>Voir sur la carte</a>
+                  <a href={LINKS.map} target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm hover:underline" style={{color: '#D33600'}}>Voir sur la carte</a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0" style={{color: '#FF4500'}}>
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center shadow-sm shrink-0" style={{color: '#D33600'}}>
                   <Mail size={20} className="md:w-6 md:h-6" />
                 </div>
                 <div>
                   <h4 className="font-bold text-sm md:text-base" style={{color: '#1A1A1A'}}>Email</h4>
-                  <a href={`mailto:${LINKS.email}`} className="text-sm transition-colors break-all" style={{color: '#4A4A4A'}} onMouseEnter={(e) => e.currentTarget.style.color = '#FF4500'} onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}>{LINKS.email}</a>
+                  <a href={`mailto:${LINKS.email}`} className="text-sm transition-colors break-all" style={{color: '#4A4A4A'}} onMouseEnter={(e) => e.currentTarget.style.color = '#D33600'} onMouseLeave={(e) => e.currentTarget.style.color = '#4A4A4A'}>{LINKS.email}</a>
                 </div>
               </div>
             </div>
@@ -73,15 +74,15 @@ export const Contact: React.FC = () => {
               <h4 className="font-bold mb-3 md:mb-4 text-sm md:text-base" style={{color: '#1A1A1A'}}>Pourquoi nous choisir ?</h4>
               <ul className="space-y-2 md:space-y-3">
                 <li className="flex items-center gap-2 text-xs md:text-sm" style={{color: '#4A4A4A'}}>
-                  <Check size={16} className="shrink-0" style={{color: '#FF4500'}} />
+                  <Check size={16} className="shrink-0" style={{color: '#D33600'}} />
                   Réponse sous 24h garantie
                 </li>
                 <li className="flex items-center gap-2 text-xs md:text-sm" style={{color: '#4A4A4A'}}>
-                  <Check size={16} className="shrink-0" style={{color: '#FF4500'}} />
+                  <Check size={16} className="shrink-0" style={{color: '#D33600'}} />
                   Devis détaillé et transparent
                 </li>
                 <li className="flex items-center gap-2 text-xs md:text-sm" style={{color: '#4A4A4A'}}>
-                  <Check size={16} className="shrink-0" style={{color: '#FF4500'}} />
+                  <Check size={16} className="shrink-0" style={{color: '#D33600'}} />
                   Premier audit offert
                 </li>
               </ul>

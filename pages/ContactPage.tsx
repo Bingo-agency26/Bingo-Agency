@@ -20,6 +20,7 @@ export const ContactPage: React.FC = () => {
     setSubmitStatus('idle');
     const form = e.currentTarget;
     try {
+      emailjs.init('HrhrOWrVLj8Pk_4_X');
       await emailjs.sendForm('service_6npek0d', 'template_d3dbevc', form, 'HrhrOWrVLj8Pk_4_X');
       setSubmitStatus('success');
       form.reset();
