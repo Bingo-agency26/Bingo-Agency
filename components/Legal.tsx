@@ -21,69 +21,62 @@ export const Legal: React.FC<LegalProps> = ({ isOpen, onClose }) => {
         </button>
         
         <div className="p-8 md:p-12">
-          <h2 className="text-3xl font-bold text-brand-dark mb-8">Mentions Légales & Politique de Confidentialité</h2>
+          <h2 className="text-3xl font-bold text-[#1A1A1A] mb-8">Mentions Légales & Politique de Confidentialité</h2>
           
-          <div className="space-y-8 text-gray-600">
+          <div className="space-y-8 text-gray-700">
             <section>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">1. Éditeur du site</h3>
+              <h3 className="text-xl font-bold text-[#FF4500] mb-4">1. Éditeur du site</h3>
               <p>
                 Le site bingo-agency.fr est édité par :
                 <br /><br />
-                <strong>BINGO AGENCY</strong><br />
-                Auto-entrepreneur (Entreprise Individuelle)<br />
-                SIRET : [SIRET à compléter]<br />
+                <strong>Hamza Abdelhaq</strong> agissant sous le nom commercial <strong>BINGO AGENCY</strong><br />
+                Statut : Auto-entrepreneur (Entreprise Individuelle)<br />
+                SIRET : En cours d'immatriculation<br />
                 Siège social : Toulouse, France<br />
-                Téléphone : [Numéro à compléter]<br />
                 Email : contact@bingo-agency.fr<br />
-                Directeur de la publication : [Prénom Nom à compléter]
+                Directeur de la publication : Hamza Abdelhaq
               </p>
             </section>
 
             <section>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">2. Hébergement</h3>
+              <h3 className="text-xl font-bold text-[#FF4500] mb-4">2. Hébergement</h3>
               <p>
                 Le site est hébergé par :<br /><br />
-                <strong>IONOS SE</strong><br />
-                7 Place de la Gare, 57200 Sarreguemines, France<br />
-                Site : <a href="https://www.ionos.fr" target="_blank" rel="noopener noreferrer" className="text-brand-primary underline">www.ionos.fr</a>
+                <strong>GitHub Inc. (GitHub Pages)</strong><br />
+                88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br />
+                Site : <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" className="text-[#FF4500] font-semibold hover:underline">pages.github.com</a>
               </p>
             </section>
 
             <section>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">3. Propriété Intellectuelle</h3>
+              <h3 className="text-xl font-bold text-[#FF4500] mb-4">3. Propriété Intellectuelle</h3>
               <p>
-                L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.
+                L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés (textes, design, architecture), y compris pour les représentations iconographiques et photographiques. Toute reproduction totale ou partielle sans l'autorisation expresse de Hamza Abdelhaq est formellement interdite.
               </p>
             </section>
 
             <section>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">4. Protection des Données Personnelles (RGPD)</h3>
+              <h3 className="text-xl font-bold text-[#FF4500] mb-4">4. Protection des Données Personnelles (RGPD)</h3>
               <p>
-                Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de portabilité, d'effacement et d'opposition concernant vos données personnelles.
+                Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de portabilité, d'effacement et d'opposition concernant vos données personnelles recueillies via le formulaire de contact.
               </p>
-              <ul className="list-disc pl-5 mt-2 space-y-1">
-                <li><strong>Responsable du traitement :</strong> Bingo Agency</li>
-                <li><strong>Finalité :</strong> Gestion de la relation client, prospection commerciale, statistiques.</li>
-                <li><strong>Base légale :</strong> Consentement (formulaire de contact, cookies).</li>
-                <li><strong>Durée de conservation :</strong> 3 ans pour les prospects, 13 mois pour les cookies.</li>
+              <ul className="list-disc pl-5 mt-4 space-y-2">
+                <li><strong>Responsable du traitement :</strong> Hamza Abdelhaq (Bingo Agency)</li>
+                <li><strong>Données collectées :</strong> Nom, Email, Téléphone, Message.</li>
+                <li><strong>Finalité :</strong> Répondre aux demandes de contact, gestion de la relation commerciale et proposition d'audits.</li>
+                <li><strong>Base légale :</strong> Votre consentement explicite lors de la soumission du formulaire.</li>
+                <li><strong>Durée de conservation :</strong> 3 ans maximum pour les données de prospection, à compter du dernier contact.</li>
               </ul>
-              <p className="mt-2">
-                Pour exercer ces droits, contactez-nous à : contact@bingo-agency.fr<br />
-                Vous disposez également du droit d'introduire une réclamation auprès de la CNIL : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-brand-primary underline">www.cnil.fr</a>
+              <p className="mt-4">
+                Pour exercer vos droits, vous pouvez nous contacter directement à : <strong>contact@bingo-agency.fr</strong><br />
+                Si vous estimez que vos droits "Informatique et Libertés" ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" className="text-[#FF4500] font-semibold hover:underline">www.cnil.fr</a>).
               </p>
             </section>
 
             <section>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">5. Cookies</h3>
+              <h3 className="text-xl font-bold text-[#FF4500] mb-4">5. Cookies & Traceurs</h3>
               <p>
-                Ce site utilise des cookies pour améliorer l'expérience utilisateur et réaliser des statistiques de visites. Conformément à la réglementation CNIL, votre consentement est recueilli avant tout dépôt de cookies non essentiels. Vous pouvez gérer vos préférences via le bandeau de cookies ou les paramètres de votre navigateur.
-              </p>
-            </section>
-
-            <section>
-              <h3 className="text-xl font-bold text-brand-dark mb-4">6. Médiation et règlement des litiges</h3>
-              <p>
-                Conformément aux articles L.616-1 et R.616-1 du Code de la consommation, en cas de litige, vous pouvez recourir gratuitement à un médiateur de la consommation. Nous adhérons au service de médiation suivant : <a href="https://www.mediation-conso.fr" target="_blank" rel="noopener noreferrer" className="text-brand-primary underline">www.mediation-conso.fr</a>.
+                Ce site utilise des cookies techniques nécessaires à son bon fonctionnement, ainsi que des traceurs d'analyse d'audience pour mesurer notre trafic. Un bandeau de consentement vous permet d'accepter ou de refuser les cookies non essentiels lors de votre première visite. Vos préférences sont conservées pour une durée maximale de 13 mois.
               </p>
             </section>
           </div>
