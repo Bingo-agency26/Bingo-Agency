@@ -3,15 +3,14 @@ import { X, Calendar, Clock } from 'lucide-react';
 import { BLOG_POSTS } from '../constants';
 
 interface BlogArticleProps {
-  articleId: number | null;
+  article: any | null;
   onClose: () => void;
 }
 
-export const BlogArticle: React.FC<BlogArticleProps> = ({ articleId, onClose }) => {
-  const article = articleId ? BLOG_POSTS.find(post => post.id === articleId) : null;
+export const BlogArticle: React.FC<BlogArticleProps> = ({ article, onClose }) => {
 
   useEffect(() => {
-    if (articleId) {
+    if (article) {
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
@@ -25,7 +24,7 @@ export const BlogArticle: React.FC<BlogArticleProps> = ({ articleId, onClose }) 
       document.body.style.position = '';
       document.body.style.width = '';
     };
-  }, [articleId]);
+  }, [article]);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {

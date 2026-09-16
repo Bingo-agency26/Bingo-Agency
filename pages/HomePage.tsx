@@ -11,14 +11,14 @@ import { BlogArticle } from '../components/BlogArticle';
 import { motion } from 'framer-motion';
 
 export const HomePage: React.FC = () => {
-  const [selectedArticleId, setSelectedArticleId] = useState<number | null>(null);
+  const [selectedArticle, setSelectedArticle] = useState<any | null>(null);
 
-  const handleOpenArticle = (articleId: number) => {
-    setSelectedArticleId(articleId);
+  const handleOpenArticle = (article: any) => {
+    setSelectedArticle(article);
   };
 
   const handleCloseArticle = () => {
-    setSelectedArticleId(null);
+    setSelectedArticle(null);
   };
 
   return (
@@ -35,7 +35,7 @@ export const HomePage: React.FC = () => {
       <Blog onOpenArticle={handleOpenArticle} />
       <SEODiagnostic />
       <Contact />
-      <BlogArticle articleId={selectedArticleId} onClose={handleCloseArticle} />
+      <BlogArticle article={selectedArticle} onClose={handleCloseArticle} />
     </motion.div>
   );
 };

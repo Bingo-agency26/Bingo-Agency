@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Blog } from '../components/Blog';
+import { BlogArticle } from '../components/BlogArticle';
 
 export const BlogPage: React.FC = () => {
+  const [selectedArticle, setSelectedArticle] = useState<any | null>(null);
+
   useEffect(() => {
     document.title = "Blog & Insights - Bingo Agency";
   }, []);
@@ -44,11 +47,12 @@ export const BlogPage: React.FC = () => {
           </motion.p>
         </div>
 
-        {/* We reuse the Blog component but you can pass a prop or wrap it nicely */}
         <div className="max-w-7xl mx-auto">
-          <Blog onOpenArticle={() => {}} />
+          <Blog onOpenArticle={(article) => setSelectedArticle(article)} />
         </div>
       </div>
+      
+      <BlogArticle article={selectedArticle} onClose={() => setSelectedArticle(null)} />
     </motion.div>
   );
 };

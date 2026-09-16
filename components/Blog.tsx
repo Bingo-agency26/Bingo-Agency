@@ -6,7 +6,7 @@ import { db } from '../firebase';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 
 interface BlogProps {
-  onOpenArticle: (articleId: number | string) => void;
+  onOpenArticle: (article: any) => void;
 }
 
 export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
@@ -86,7 +86,7 @@ export const Blog: React.FC<BlogProps> = ({ onOpenArticle }) => {
               <article
                 key={post.id}
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group cursor-pointer"
-                onClick={() => onOpenArticle(post.id)}
+                onClick={() => onOpenArticle(post)}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img
