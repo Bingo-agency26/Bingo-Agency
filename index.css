@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-
+@plugin "@tailwindcss/typography";
 @theme {
   /* Brand Colors - New Palette */
   --color-brand-orange: #FF4500;      /* Orange Vibrant - CTA primary */
