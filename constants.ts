@@ -1,10 +1,170 @@
+export const LINKS = {
+  booking: "https://calendly.com/bingo-agency-fr/30min",
+  facebook: "https://www.facebook.com/profile.php?id=61587929317052",
+  linkedin: "https://www.linkedin.com/company/bingo-agencyy",
+  instagram: "https://www.instagram.com/bingoagencytoulouse/",
+  tiktok: "https://www.tiktok.com/@bingoagency",
+  email: "contact@bingo-agency.fr",
+  map: "https://maps.google.com/?q=Toulouse,France"
+};
+
+export const IMAGES = {
+  heroBg: "./assets/images/hero-bg.jpg",
+  logoHeader: "https://img.mailinblue.com/10048989/images/content_library/original/698decc3f03c89654a2a2d01.png",
+  logoAlt: "./assets/images/logo-black.png",
+  logoFooter: "./assets/images/logo-footer.png",
+  adsDashboard: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+  socialMedia: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80&w=800",
+  print: "https://images.unsplash.com/photo-1562564055-71e051d33c19?auto=format&fit=crop&q=80&w=800",
+  branding: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+  team: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800",
+  ecommerce: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800",
+  blogSEO: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?auto=format&fit=crop&q=80&w=800",
+  blogSEOLocal: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
+  blogMarketing: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+  blogDesign: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
+  blogAI: "https://user-gen-media-assets.s3.amazonaws.com/seedream_images/9286a175-58e3-49b0-b2b7-14f48f6fd7fc.png"
+};
+
+export const STATS = [
+  { label: "Approche", value: "360°", suffix: " Globale" },
+  { label: "Stratégie", value: "100%", suffix: " Sur-mesure" },
+  { label: "Suivi", value: "Pro", suffix: " Actif" },
+  { label: "Créativité", value: "∞", suffix: " Sans limite" }
+];
+
+export const PRICING = [
+  {
+    title: "Pub Digitale Starter",
+    price: "À partir de 250",
+    period: "€/mois",
+    features: [
+      "Budget pub optimisé",
+      "Gestion Google/Bing Ads",
+      "Mots-clés Search & Display",
+      "Rapports Dashboard Anonymisés",
+      "Optimisation ROI continue"
+    ]
+  },
+  {
+    title: "Réseaux Sociaux",
+    price: "À partir de 150",
+    period: "€/mois",
+    features: [
+      "Stratégie & Conseil",
+      "Création de contenus (Reels, Posts)",
+      "Community Management",
+      "Facebook, Insta, LinkedIn, TikTok",
+      "Engagement garanti"
+    ]
+  },
+  {
+    title: "Print & Charte",
+    price: "À partir de 70",
+    period: "€",
+    features: [
+      "Identité Visuelle Complète",
+      "Logo & Charte Graphique",
+      "Flyers, Affiches, PLV",
+      "Impression Qualité Offset",
+      "Livraison & Distribution"
+    ]
+  },
+  {
+    title: "Full Com 360°",
+    price: "Sur devis",
+    period: "",
+    features: [
+      "Gestion Complète Digitale + Print",
+      "Site Web & SEO inclus",
+      "Campagnes Ads & Social illimitées",
+      "Support Prioritaire 24/7",
+      "Réunions mensuelles de stratégie"
+    ],
+    highlight: true
+  }
+];
+
+export const TESTIMONIALS = [
+  {
+    text: "Depuis que Bingo gère nos campagnes Ads, notre ROI a été multiplié par 4. Une équipe réactive et transparente.",
+    author: "Client E-commerce",
+    role: "Secteur Mode"
+  },
+  {
+    text: "Une refonte totale de notre identité visuelle qui nous a permis de toucher une clientèle beaucoup plus premium.",
+    author: "Client B2B",
+    role: "Cabinet de Conseil"
+  },
+  {
+    text: "Leurs stratégies sur TikTok et Instagram ont fait exploser notre visibilité locale. +10k followers en 3 mois.",
+    author: "Client Restauration",
+    role: "Franchise"
+  }
+];
+
+export const PORTFOLIO_CATEGORIES = [
+  {
+    id: 'branding',
+    name: 'Branding & Identité Visuelle',
+    description: 'Logos, chartes graphiques, refontes complètes',
+    projects: [
+      {
+        id: 1,
+        title: "DiagnoTest",
+        description: "Identité visuelle complète — Logo, charte graphique, site web & supports print",
+        image: "https://raw.githubusercontent.com/Bingo-agency26/Bingo-Agency/main/public/assets/images/Diagnotest.png",
+        tags: ["Logo", "Charte Graphique", "Site Web", "Print"]
+      }
+    ]
+  },
+  {
+    id: 'web',
+    name: 'Sites Web & Applications',
+    description: 'E-commerce, vitrines, landing pages, apps',
+    projects: [
+      {
+        id: 1,
+        title: "Site Atelier",
+        description: "Création de site vitrine sur mesure — Design, développement & mise en ligne",
+        image: "https://raw.githubusercontent.com/Bingo-agency26/Bingo-Agency/main/public/assets/images/Site%20atelier%20.png",
+        tags: ["Site Vitrine", "Design", "Développement", "SEO"]
+      }
+    ]
+  },
+  {
+    id: 'social',
+    name: 'Social Media & Contenus',
+    description: 'Campagnes Instagram, TikTok, LinkedIn, Facebook',
+    projects: []
+  },
+  {
+    id: 'ads',
+    name: 'Publicité Digitale',
+    description: 'Google Ads, Facebook Ads, campagnes performance',
+    projects: []
+  },
+  {
+    id: 'print',
+    name: 'Print & Supports Physiques',
+    description: 'Flyers, brochures, PLV, packaging',
+    projects: []
+  },
+  {
+    id: 'video',
+    name: 'Vidéo & Motion Design',
+    description: 'Spots pub, reels, animations, montage',
+    projects: []
+  }
+];
+
 export const BLOG_POSTS = [
   {
     id: 3,
     title: 'Création de Site Internet à Toulouse : Votre Site Sur-Mesure',
     category: 'Web Design',
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800',
-    date: '2026-09-14T19:18:32.163937',
+    date: '2026-09-14T19:28:08.751871',
     readTime: '12 min',
     excerpt: 'Spécialiste de la création de site internet à Toulouse. Sites vitrines et e-commerce sur-mesure, ultra-rapides et optimisés pour le SEO avec Bingo Agency.',
     content: `<title>Création de Site Internet à Toulouse : Votre Site Sur-Mesure</title>
@@ -198,7 +358,7 @@ export const BLOG_POSTS = [
     title: 'Création de Site Internet à Toulouse : Le Guide Stratégique pour PME & TPE',
     category: 'Web Design',
     image: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&q=80&w=800',
-    date: '2026-09-11T19:18:32.165869',
+    date: '2026-09-11T19:28:08.754612',
     readTime: '9 min',
     excerpt: 'Création de site internet à Toulouse sur-mesure pour PME et TPE. Design moderne, optimisé SEO et mobile avec Bingo Agency. Devis rapide !',
     content: `<title>Création de Site Internet à Toulouse : Guide PME Bingo Agency</title>
@@ -346,7 +506,7 @@ export const BLOG_POSTS = [
     title: 'Agence Web à Toulouse : Sites Performants et Sur-Mesure',
     category: 'Marketing',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
-    date: '2026-08-10T19:18:32.187972',
+    date: '2026-08-10T19:28:08.788365',
     readTime: '13 min',
     excerpt: 'Création de sites internet sur-mesure et refonte avec Bingo Agency, votre agence web à Toulouse. Webdesign haut de gamme, SEO local et rentabilité garantie.',
     content: `<title>Agence Web à Toulouse : Sites Performants et Sur-Mesure</title>
@@ -555,7 +715,7 @@ export const BLOG_POSTS = [
     title: 'Création Site Internet à Toulouse : Concevez un Site Performant et sur-Mesure avec Bingo Agency',
     category: 'Web Design',
     image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800',
-    date: '2026-08-04T19:18:32.192655',
+    date: '2026-08-04T19:28:08.795555',
     readTime: '7 min',
     excerpt: 'Conception de sites web sur-mesure à Toulouse : vitrine, e-commerce & WordPress. Responsive, rapide et optimisé SEO. Demandez votre devis Bingo Agency !',
     content: `<title>Création Site Internet Toulouse | Bingo Agency Agence Web</title>
@@ -722,7 +882,7 @@ export const BLOG_POSTS = [
     title: 'Création de Site Web à Toulouse : Le Guide Stratégique pour TPE et PME',
     category: 'Web Design',
     image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
-    date: '2026-09-02T19:18:32.172029',
+    date: '2026-09-02T19:28:08.764147',
     readTime: '11 min',
     excerpt: 'Confiez la création de votre site web à Toulouse à Bingo Agency. Sites sur-mesure, rapides, optimisés SEO et conçus pour convertir vos prospects.',
     content: `<title>Création de Site Web à Toulouse : Le Guide Stratégique pour TPE et PME</title>
@@ -876,7 +1036,7 @@ export const BLOG_POSTS = [
     title: 'Agence SEO à Toulouse : Développez Votre Visibilité Google',
     category: 'SEO',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    date: '2026-09-16T19:18:32.163270',
+    date: '2026-09-16T19:28:08.750922',
     readTime: '13 min',
     excerpt: 'Expertise SEO à Toulouse : améliorez votre positionnement Google, générez du trafic qualifié et boostez votre CA avec l\'agence SEO Bingo Agency.',
     content: `<title>Agence SEO à Toulouse : Développez Votre Visibilité Google</title>
@@ -1070,7 +1230,7 @@ export const BLOG_POSTS = [
     title: 'Référencement Naturel à Toulouse : Dominez Google en 2026',
     category: 'Marketing',
     image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800',
-    date: '2026-08-15T19:18:32.185273',
+    date: '2026-08-15T19:28:08.784132',
     readTime: '8 min',
     excerpt: 'Stratégie de référencement naturel à Toulouse. Positionnez votre TPE en 1ère page de Google. Contactez Bingo Agency.',
     content: `<title>Référencement Naturel à Toulouse : Dominez Google en 2026</title>
@@ -1213,7 +1373,7 @@ export const BLOG_POSTS = [
     title: 'Agence Marketing Digital à Toulouse : Accélérez Votre Croissance avec Bingo Agency',
     category: 'Marketing',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    date: '2026-08-27T19:18:32.180731',
+    date: '2026-08-27T19:28:08.777454',
     readTime: '16 min',
     excerpt: 'Boostez votre visibilité et vos ventes avec notre agence marketing digital à Toulouse. Stratégie 360°, acquisition et ROI garantis. Contactez Bingo Agency.',
     content: `<title>Agence Marketing Digital à Toulouse : Booster Votre Croissance</title>
@@ -1400,7 +1560,7 @@ export const BLOG_POSTS = [
     title: 'Agence Google Ads à Toulouse : Maximisez Votre ROI SEA',
     category: 'Marketing',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
-    date: '2026-09-15T19:18:32.163630',
+    date: '2026-09-15T19:28:08.751436',
     readTime: '13 min',
     excerpt: 'Confiez vos campagnes à notre agence Google Ads à Toulouse. Gestion experte, coût par clic optimisé et ROI maximisé pour TPE/PME avec Bingo Agency.',
     content: `<title>Agence Google Ads à Toulouse : Maximisez Votre ROI SEA</title>
@@ -1597,7 +1757,7 @@ export const BLOG_POSTS = [
     title: 'Agence Communication Digitale à Toulouse | Bingo Agency',
     category: 'Marketing',
     image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800',
-    date: '2026-08-09T19:18:32.188397',
+    date: '2026-08-09T19:28:08.789038',
     readTime: '12 min',
     excerpt: 'Développez votre marque avec Bingo Agency, agence communication digitale à Toulouse. Stratégie 360, réseaux sociaux, SEO et branding pour TPE et PME.',
     content: `<title>Agence Communication Digitale à Toulouse | Bingo Agency</title>
